@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { Text, Input, Button } from 'moonwalkerswap-uikit'
+import { Text, Input, Button } from 'polygon-moonwalkerswap-uikit'
 import useI18n from 'hooks/useI18n'
 
 interface PastLotterySearcherProps {

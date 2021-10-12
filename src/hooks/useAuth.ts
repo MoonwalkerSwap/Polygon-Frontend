@@ -1,6 +1,6 @@
 import { useCallback } from 'react'
 import { useWeb3React, UnsupportedChainIdError } from '@web3-react/core'
-import { NoBscProviderError } from '@binance-chain/bsc-connector'
+import { NoPolygonProviderError } from 'moonwalkerswap-polygon-connector'
 import {
   NoEthereumProviderError,
   UserRejectedRequestError as UserRejectedRequestErrorInjected,
@@ -9,7 +9,7 @@ import {
   UserRejectedRequestError as UserRejectedRequestErrorWalletConnect,
   WalletConnectConnector,
 } from '@web3-react/walletconnect-connector'
-import { ConnectorNames, connectorLocalStorageKey } from 'moonwalkerswap-uikit'
+import { ConnectorNames, connectorLocalStorageKey } from 'polygon-moonwalkerswap-uikit'
 import { useToast } from 'state/hooks'
 import { connectorsByName } from 'utils/web3React'
 import { setupNetwork } from 'utils/wallet'
@@ -29,7 +29,7 @@ const useAuth = () => {
           }
         } else {
           window.localStorage.removeItem(connectorLocalStorageKey)
-          if (error instanceof NoEthereumProviderError || error instanceof NoBscProviderError) {
+          if (error instanceof NoEthereumProviderError || error instanceof NoPolygonProviderError) {
             toastError('Provider Error', 'No provider was found')
           } else if (
             error instanceof UserRejectedRequestErrorInjected ||

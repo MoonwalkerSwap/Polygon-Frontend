@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { ChevronDownIcon, useMatchBreakpoints } from 'moonwalkerswap-uikit'
+import { ChevronDownIcon, useMatchBreakpoints } from 'polygon-moonwalkerswap-uikit'
 
 interface DetailsProps {
   actionPanelToggled: boolean

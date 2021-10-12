@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, BoxProps, Text } from 'moonwalkerswap-uikit'
+import { Box, BoxProps, Text } from 'polygon-moonwalkerswap-uikit'
 
 type MetaLabel = BoxProps
 

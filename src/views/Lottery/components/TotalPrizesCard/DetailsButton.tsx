@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { ChevronDownIcon, Text } from 'moonwalkerswap-uikit'
+import { ChevronDownIcon, Text } from 'polygon-moonwalkerswap-uikit'
 
 export interface DetailsButtonProps {
   onClick?: () => void

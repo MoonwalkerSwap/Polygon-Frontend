@@ -3,26 +3,26 @@ import BigNumber from 'bignumber.js'
 import { useWeb3React } from '@web3-react/core'
 import { Contract } from 'web3-eth-contract'
 import { getLotteryAddress } from 'utils/addressHelpers'
-import { useDust } from './useContract'
+import { usePdust } from './useContract'
 import useRefresh from './useRefresh'
 
 // Retrieve lottery allowance
 export const useLotteryAllowance = () => {
   const [allowance, setAllowance] = useState(new BigNumber(0))
   const { account } = useWeb3React()
-  const dustContract = useDust()
+  const pdustContract = usePdust()
   const { fastRefresh } = useRefresh()
 
   useEffect(() => {
     const fetchAllowance = async () => {
-      const res = await dustContract.methods.allowance(account, getLotteryAddress()).call()
+      const res = await pdustContract.methods.allowance(account, getLotteryAddress()).call()
       setAllowance(new BigNumber(res))
     }
 
     if (account) {
       fetchAllowance()
     }
-  }, [account, dustContract, fastRefresh])
+  }, [account, pdustContract, fastRefresh])
 
   return allowance
 }

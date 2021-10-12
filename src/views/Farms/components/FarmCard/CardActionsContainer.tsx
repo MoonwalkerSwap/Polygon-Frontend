@@ -2,8 +2,8 @@ import React, { useState, useCallback } from 'react'
 import styled from 'styled-components'
 import { provider as ProviderType } from 'web3-core'
 import { getAddress } from 'utils/addressHelpers'
-import { getBep20Contract } from 'utils/contractHelpers'
-import { Button, Flex, Text } from 'moonwalkerswap-uikit'
+import { getERC20Contract } from 'utils/contractHelpers'
+import { Button, Flex, Text } from 'polygon-moonwalkerswap-uikit'
 import { Farm } from 'state/types'
 import { useFarmFromSymbol, useFarmUser } from 'state/hooks'
 import useI18n from 'hooks/useI18n'
@@ -48,7 +48,7 @@ const CardActions: React.FC<FarmCardActionsProps> = ({ farm, account, addLiquidi
   const isApproved = account && allowance && allowance.isGreaterThan(0)
   const web3 = useWeb3()
 
-  const lpContract = getBep20Contract(lpAddress, web3)
+  const lpContract = getERC20Contract(lpAddress, web3)
 
   const { onApprove } = useApprove(lpContract)
 
@@ -83,7 +83,7 @@ const CardActions: React.FC<FarmCardActionsProps> = ({ farm, account, addLiquidi
       <Flex>
         <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px" pr="3px">
           {/* TODO: Is there a way to get a dynamic value here from useFarmFromSymbol? */}
-          DUST
+          PDUST
         </Text>
         <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px">
           {TranslateString(1072, 'Earned')}

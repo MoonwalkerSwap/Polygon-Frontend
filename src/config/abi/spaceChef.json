@@ -2,8 +2,8 @@
   {
     "inputs": [
       {
-        "internalType": "contract IBEP20",
-        "name": "_syrup",
+        "internalType": "contract IERC20",
+        "name": "_pspacebar",
         "type": "address"
       },
       {
@@ -145,10 +145,10 @@
   },
   {
     "inputs": [],
-    "name": "syrup",
+    "name": "pspacebar",
     "outputs": [
       {
-        "internalType": "contract IBEP20",
+        "internalType": "contract IERC20",
         "name": "",
         "type": "address"
       }

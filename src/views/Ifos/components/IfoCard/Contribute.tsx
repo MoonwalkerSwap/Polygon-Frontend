@@ -1,7 +1,7 @@
 import React from 'react'
 import BigNumber from 'bignumber.js'
 import { Contract } from 'web3-eth-contract'
-import { Box, Button, Flex, Text, useModal } from 'moonwalkerswap-uikit'
+import { Box, Button, Flex, Text, useModal } from 'polygon-moonwalkerswap-uikit'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { Ifo } from 'config/constants/types'
 import useI18n from 'hooks/useI18n'
@@ -34,7 +34,7 @@ const Contribute: React.FC<ContributeProps> = ({
   const { toastSuccess } = useToast()
 
   const handleContributeSuccess = (amount: BigNumber) => {
-    toastSuccess('Success!', `You have contributed ${getBalanceNumber(amount)} DUST-BNB LP tokens to this IFO!`)
+    toastSuccess('Success!', `You have contributed ${getBalanceNumber(amount)} pDUST-MATIC LP tokens to this IFO!`)
     addUserContributedAmount(amount)
   }
 
@@ -52,7 +52,7 @@ const Contribute: React.FC<ContributeProps> = ({
     <Box>
       <Flex mb="4px">
         <Text as="span" bold fontSize="12px" mr="4px" textTransform="uppercase">
-          DUST-BNB LP
+          PDUST-MATIC LP
         </Text>
         <Text as="span" color="textSubtle" fontSize="12px" textTransform="uppercase" bold>
           Committed

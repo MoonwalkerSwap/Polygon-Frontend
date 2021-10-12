@@ -1,21 +1,21 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Heading, Text, BaseLayout } from 'moonwalkerswap-uikit'
+import { Heading, Text, BaseLayout } from 'polygon-moonwalkerswap-uikit'
 import useI18n from 'hooks/useI18n'
 import Page from 'components/layout/Page'
 import FarmStakingCard from 'views/Home/components/FarmStakingCard'
 // eslint-disable-next-line
 import LotteryCard from 'views/Home/components/LotteryCard'
-import DustStats from 'views/Home/components/DustStats'
+import PdustStats from 'views/Home/components/PdustStats'
 // eslint-disable-next-line
-//import TotalValueLockedCard from 'views/Home/components/TotalValueLockedCard'
+import TotalValueLockedCard from 'views/Home/components/TotalValueLockedCard'
 import EarnAPYCard from 'views/Home/components/EarnAPYCard'
 // eslint-disable-next-line
 import EarnAssetCard from 'views/Home/components/EarnAssetCard'
 // eslint-disable-next-line
 import WinCard from 'views/Home/components/WinCard'
 
-// Jets
+// SpaceJets
 import Jet1 from './components/Jet1'
 import Jet2 from './components/Jet2'
 import JetMobile from './components/JetMobile'
@@ -101,9 +101,9 @@ const Home: React.FC = () => {
             <Jet1/>
             <Container>
               <Heading as="h1" size="xl" mb="24px" color="text">
-                {TranslateString(576, 'MoonWalkerSwap')}
+                {TranslateString(576, 'Polygon MoonWalkerSwap')}
               </Heading>
-              <Text>{TranslateString(578, 'The Newest AMM and yield farm on Binance Smart Chain.')}</Text>
+              <Text>{TranslateString(578, 'The Newest AMM and yield farm on Polygon Chain.')}</Text>
             </Container>
             <Jet2/>
           </Flex>
@@ -111,7 +111,7 @@ const Home: React.FC = () => {
         <div>
           <Cards>
             <FarmStakingCard />
-            <DustStats />
+            <PdustStats />
           </Cards>
           <CTACards>
             <EarnAPYCard />

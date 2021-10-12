@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Heading, Text } from 'moonwalkerswap-uikit'
+import { Heading, Text } from 'polygon-moonwalkerswap-uikit'
 import Container from 'components/layout/Container'
 import useI18n from 'hooks/useI18n'
 
@@ -27,7 +27,7 @@ const Hero = () => {
   return (
     <StyledHero>
       <Container>
-        <Title>{TranslateString(500, 'IDO: Initial DEX Offerings')}</Title>
+        <Title>{TranslateString(500, 'IFO: Initial Farming Offerings')}</Title>
         <Blurb>{TranslateString(502, 'Buy new tokens with a brand new token sale model.')}</Blurb>
       </Container>
     </StyledHero>

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Text, Heading, BaseLayout, Button, LinkExternal, Flex, Image } from 'moonwalkerswap-uikit'
+import { Text, Heading, BaseLayout, Button, LinkExternal, Flex, Image } from 'polygon-moonwalkerswap-uikit'
 import { ifosConfig } from 'config/constants'
 import useI18n from 'hooks/useI18n'
 import IfoCard from './components/IfoCard'
@@ -48,20 +48,20 @@ const Ifo = () => {
           <Title as="h2">{TranslateString(592, 'How to take part')}</Title>
           <Heading mb="16px">{TranslateString(594, 'Before Sale')}:</Heading>
           <List>
-            <li>{TranslateString(596, 'Buy DUST and BNB tokens')}</li>
-            <li>{TranslateString(598, 'Get DUST-BNB LP tokens by adding DUST and BNB liquidity')}</li>
+            <li>{TranslateString(596, 'Buy pDUST and MATIC tokens')}</li>
+            <li>{TranslateString(598, 'Get pDUST-MATIC LP tokens by adding DUST and MATIC liquidity')}</li>
           </List>
           <Flex mb="16px">
-            <LinkExternal href="https://exchange.pancakeswap.finance/#/swap" mr="16px">
-              {TranslateString(1060, 'Buy DUST')}
+            <LinkExternal href="https://polygon-swap.moonwalker.network/#/swap" mr="16px">
+              {TranslateString(1060, 'Buy pDUST')}
             </LinkExternal>
-            <LinkExternal href="https://swap.moonwalker.network/add/BNB/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82">
+            <LinkExternal href="https://polygon-swap.moonwalker.network/add/MATIC/0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270">
               {TranslateString(1062, 'Get LP tokens')}
             </LinkExternal>
           </Flex>
           <Heading mb="16px">{TranslateString(600, 'During Sale')}:</Heading>
           <List>
-            <li>{TranslateString(602, 'While the sale is live, commit your DUST-LP tokens to buy the IFO tokens')}</li>
+            <li>{TranslateString(602, 'While the sale is live, commit your pDUST-LP tokens to buy the IFO tokens')}</li>
           </List>
           <Heading mb="16px">{TranslateString(604, 'After Sale')}:</Heading>
           <List>
@@ -72,7 +72,7 @@ const Ifo = () => {
             <Button
               as="a"
               variant="secondary"
-              href="https://docs.pancakeswap.finance/core-products/ifo-initial-farm-offering"
+              href="https://docs.moonwalker.network/core-products"
             >
               {TranslateString(610, 'Read more')}
             </Button>
@@ -85,12 +85,12 @@ const Ifo = () => {
             <Text mb={3}>
               {TranslateString(
                 514,
-                'Launch your project with MoonWalkerSwap, Binance Smart Chain’s most-used AMM project and liquidity provider, to bring your token directly to the most active and rapidly growing community on BSC.',
+                'Launch your project with Polygon MoonWalkerSwap,Polygon Chain’s most-used AMM project and liquidity provider, to bring your token directly to the most active and rapidly growing community on Polygon.',
               )}
             </Text>
             <Button
               as="a"
-              href="https://docs.google.com/forms/d/e/1FAIpQLScGdT5rrVMr4WOWr08pvcroSeuIOtEJf1sVdQGVdcAOqryigQ/viewform"
+              href="https://form.jotform.com/212606130120031"
               external
             >
               {TranslateString(516, 'Apply to launch')}

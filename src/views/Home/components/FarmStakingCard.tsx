@@ -1,13 +1,13 @@
 import React, { useState, useCallback } from 'react'
 import styled from 'styled-components'
-import { Heading, Card, CardBody, Button } from 'moonwalkerswap-uikit'
+import { Heading, Card, CardBody, Button } from 'polygon-moonwalkerswap-uikit'
 import { useWeb3React } from '@web3-react/core'
 import useI18n from 'hooks/useI18n'
 import { useAllHarvest } from 'hooks/useHarvest'
 import useFarmsWithBalance from 'hooks/useFarmsWithBalance'
 import UnlockButton from 'components/UnlockButton'
-import DustHarvestBalance from './DustHarvestBalance'
-import DustWalletBalance from './DustWalletBalance'
+import PdustHarvestBalance from './PdustHarvestBalance'
+import PdustWalletBalance from './PdustWalletBalance'
 
 const StyledFarmStakingCard = styled(Card)`
   background-image: url('/images/moon/cardbg.svg');
@@ -67,12 +67,12 @@ const FarmedStakingCard = () => {
         </Heading>
         <CardImage src="/images/moon/wings.svg" alt="wings logo" width={64} height={64} />
         <Block>
-          <Label>{TranslateString(544, 'DUST to Harvest')}:</Label>
-          <DustHarvestBalance />
+          <Label>{TranslateString(544, 'pDUST to Harvest')}:</Label>
+          <PdustHarvestBalance />
         </Block>
         <Block>
-          <Label>{TranslateString(546, 'DUST in Wallet')}:</Label>
-          <DustWalletBalance />
+          <Label>{TranslateString(546, 'pDUST in Wallet')}:</Label>
+          <PdustWalletBalance />
         </Block>
         <Actions>
           {account ? (
@@ -84,7 +84,7 @@ const FarmedStakingCard = () => {
 
             >
               {pendingTx
-                ? TranslateString(548, 'Collecting DUST')
+                ? TranslateString(548, 'Collecting pDUST')
                 : TranslateString(532, `Harvest all (${balancesWithValue.length})`, {
                     count: balancesWithValue.length,
                   })}

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Progress } from 'moonwalkerswap-uikit'
+import { Box, Progress } from 'polygon-moonwalkerswap-uikit'
 
 interface IfoCardProgressProps {
   progress: number

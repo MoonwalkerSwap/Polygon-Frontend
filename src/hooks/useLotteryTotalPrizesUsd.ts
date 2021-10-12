@@ -1,13 +1,13 @@
-import { usePriceDustBusd } from 'state/hooks'
+import { usePricePdustMatic } from 'state/hooks'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { useTotalRewards } from './useTickets'
 
 const useLotteryTotalPrizesUsd = () => {
   const totalRewards = useTotalRewards()
-  const totalDust = getBalanceNumber(totalRewards)
-  const dustPriceBusd = usePriceDustBusd()
+  const totalPdust = getBalanceNumber(totalRewards)
+  const PdustPriceMatic = usePricePdustMatic()
 
-  return totalDust * dustPriceBusd.toNumber()
+  return totalPdust * PdustPriceMatic.toNumber()
 }
 
 export default useLotteryTotalPrizesUsd

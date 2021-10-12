@@ -1,12 +1,12 @@
 import React, { useMemo } from 'react'
 import styled from 'styled-components'
-import { Heading, Card, CardBody, Flex, ArrowForwardIcon, Skeleton } from 'moonwalkerswap-uikit'
+import { Heading, Card, CardBody, Flex, ArrowForwardIcon, Skeleton } from 'polygon-moonwalkerswap-uikit'
 import max from 'lodash/max'
 import { NavLink } from 'react-router-dom'
 import useI18n from 'hooks/useI18n'
 import BigNumber from 'bignumber.js'
 import { getFarmApy } from 'utils/apy'
-import { useFarms, usePriceDustBusd, useGetApiPrices } from 'state/hooks'
+import { useFarms, usePricePdustMatic, useGetApiPrices } from 'state/hooks'
 
 const StyledFarmStakingCard = styled(Card)`
   margin-left: auto;
@@ -24,7 +24,7 @@ const CardMidContent = styled(Heading).attrs({ size: 'lg' })`
   color: ${({theme}) => theme.colors.extra}
 `
 const Circle = styled.div`
-  background: #FEC803;
+  background: #3D2C8D;
   margin-top: -50px;
   width: 59px;
   height: 59px;
@@ -39,7 +39,7 @@ const EarnAPYCard = () => {
   const TranslateString = useI18n()
   const farmsLP = useFarms()
   const prices = useGetApiPrices()
-  const dustPrice = usePriceDustBusd()
+  const pdustPrice = usePricePdustMatic()
 
   const highestApy = useMemo(() => {
     const apys = farmsLP
@@ -49,14 +49,14 @@ const EarnAPYCard = () => {
         if (farm.lpTotalInQuoteToken && prices) {
           const quoteTokenPriceUsd = prices[farm.quoteToken.symbol.toLowerCase()]
           const totalLiquidity = new BigNumber(farm.lpTotalInQuoteToken).times(quoteTokenPriceUsd)
-          return getFarmApy(farm.poolWeight, dustPrice, totalLiquidity)
+          return getFarmApy(farm.poolWeight, pdustPrice, totalLiquidity)
         }
         return null
       })
 
     const maxApy = max(apys)
     return maxApy?.toLocaleString('en-US', { maximumFractionDigits: 2 })
-  }, [dustPrice, farmsLP, prices])
+  }, [pdustPrice, farmsLP, prices])
 
   return (
     <StyledFarmStakingCard>

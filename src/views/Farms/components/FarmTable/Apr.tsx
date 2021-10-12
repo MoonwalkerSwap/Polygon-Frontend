@@ -14,7 +14,7 @@ export interface AprProps {
   quoteTokenAdresses: Address
   quoteTokenSymbol: string
   tokenAddresses: Address
-  dustPrice: BigNumber
+  pdustPrice: BigNumber
   originalValue: number
   hideButton?: boolean
 }
@@ -46,7 +46,7 @@ const Apr: React.FC<AprProps> = ({
   lpLabel,
   quoteTokenAdresses,
   tokenAddresses,
-  dustPrice,
+  pdustPrice,
   originalValue,
   hideButton = false,
 }) => {
@@ -59,7 +59,7 @@ const Apr: React.FC<AprProps> = ({
         <>
           <AprWrapper>{value}%</AprWrapper>
           {!hideButton && (
-            <ApyButton lpLabel={lpLabel} dustPrice={dustPrice} apy={originalValue} addLiquidityUrl={addLiquidityUrl} />
+            <ApyButton lpLabel={lpLabel} pdustPrice={pdustPrice} apy={originalValue} addLiquidityUrl={addLiquidityUrl} />
           )}
         </>
       ) : (

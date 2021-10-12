@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Text, Button, Input, InputProps, Flex, Link } from 'moonwalkerswap-uikit'
+import { Text, Button, Input, InputProps, Flex, Link } from 'polygon-moonwalkerswap-uikit'
 import useI18n from '../../hooks/useI18n'
 
 interface ModalInputProps {

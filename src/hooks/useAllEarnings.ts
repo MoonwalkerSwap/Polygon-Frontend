@@ -15,7 +15,7 @@ const useAllEarnings = () => {
     const fetchAllBalances = async () => {
       const calls = farmsConfig.map((farm) => ({
         address: getAstroChefAddress(),
-        name: 'pendingDust',
+        name: 'pendingPdust',
         params: [farm.pid, account],
       }))
 

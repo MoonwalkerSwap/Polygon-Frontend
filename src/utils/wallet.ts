@@ -3,7 +3,7 @@
 import { nodes } from './getRpcUrl'
 
 /**
- * Prompt the user to add BSC as a network on Metamask, or switch to BSC if the wallet is on a different network
+ * Prompt the user to add Polygon as a network on Metamask, or switch to Polygon if the wallet is on a different network
  * @returns {boolean} true if the setup succeeded, false otherwise
  */
 export const setupNetwork = async () => {
@@ -16,14 +16,14 @@ export const setupNetwork = async () => {
         params: [
           {
             chainId: `0x${chainId.toString(16)}`,
-            chainName: 'Binance Smart Chain Mainnet',
+            chainName: 'Polygon Chain Mainnet',
             nativeCurrency: {
-              name: 'BNB',
-              symbol: 'bnb',
+              name: 'MATIC',
+              symbol: 'matic',
               decimals: 18,
             },
             rpcUrls: nodes,
-            blockExplorerUrls: ['https://bscscan.com/'],
+            blockExplorerUrls: ['https://polygonscan.com/'],
           },
         ],
       })
@@ -33,7 +33,7 @@ export const setupNetwork = async () => {
       return false
     }
   } else {
-    console.error("Can't setup the BSC network on metamask because window.ethereum is undefined")
+    console.error("Can't setup the POLYGON network on metamask because window.ethereum is undefined")
     return false
   }
 }

@@ -2,7 +2,7 @@
   {
     "inputs": [
       {
-        "internalType": "contract DustToken",
+        "internalType": "contract PdustToken",
         "name": "_dust",
         "type": "address"
       }
@@ -242,10 +242,10 @@
   },
   {
     "inputs": [],
-    "name": "dust",
+    "name": "pdust",
     "outputs": [
       {
-        "internalType": "contract DustToken",
+        "internalType": "contract PdustToken",
         "name": "",
         "type": "address"
       }

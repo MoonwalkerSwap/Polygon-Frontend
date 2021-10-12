@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Text, Heading, Link, Image } from 'moonwalkerswap-uikit'
+import { Text, Heading, Link, Image } from 'polygon-moonwalkerswap-uikit'
 import useI18n from 'hooks/useI18n'
 
 const LayoutWrapper = styled.div`
@@ -38,7 +38,7 @@ const HowItWorks = () => {
           'Spend DUST to buy tickets, contributing to the lottery pot. Win prizes if 2, 3, or 4 of your ticket numbers match the winning numbers and their exact order!',
         )}
       </Text>
-      <StyledLink href="https://docs.pancakeswap.finance/lottery-1">{TranslateString(610, 'Read more')}</StyledLink>
+      <StyledLink href="https://docs.moonwalker.network/core-products">{TranslateString(610, 'Read more')}</StyledLink>
     </LayoutWrapper>
   )
 }

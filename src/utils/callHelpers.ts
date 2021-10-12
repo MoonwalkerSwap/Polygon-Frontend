@@ -34,7 +34,7 @@ export const spaceChefStake = async (spaceChefContract, amount, decimals = 18, a
     })
 }
 
-export const spaceChefStakeBnb = async (spaceChefContract, amount, account) => {
+export const spaceChefStakeMatic = async (spaceChefContract, amount, account) => {
   return spaceChefContract.methods
     .deposit()
     .send({ from: account, gas: 200000, value: new BigNumber(amount).times(new BigNumber(10).pow(18)).toString() })
@@ -63,7 +63,7 @@ export const unstake = async (astroChefContract, pid, amount, account) => {
 
 export const spaceChefUnstake = async (spaceChefContract, amount, decimals = 18, account) => {
   // shit code: hard fix for old CTK and BLK
-  if (spaceChefContract.options.address === '0xc33729b1870d2a296df7ef9d498f93a1d3d1a40e') {
+  if (spaceChefContract.options.address === '0x3fb0087842b7ebd57be8024aaf32cc6a390c13d5') {
     return spaceChefContract.methods
       .emergencyWithdraw()
       .send({ from: account })
@@ -71,7 +71,7 @@ export const spaceChefUnstake = async (spaceChefContract, amount, decimals = 18,
         return tx.transactionHash
       })
   }
-  if (spaceChefContract.options.address === '0xc33729b1870d2a296df7ef9d498f93a1d3d1a40e') {
+  if (spaceChefContract.options.address === '0x3fb0087842b7ebd57be8024aaf32cc6a390c13d5') {
     return spaceChefContract.methods
       .emergencyWithdraw()
       .send({ from: account })
@@ -124,7 +124,7 @@ export const spaceChefHarvest = async (spaceChefContract, account) => {
     })
 }
 
-export const spaceChefHarvestBnb = async (spaceChefContract, account) => {
+export const spaceChefHarvestMatic = async (spaceChefContract, account) => {
   return spaceChefContract.methods
     .deposit()
     .send({ from: account, gas: 200000, value: new BigNumber(0) })

@@ -15,7 +15,12 @@ export interface TradePair {
 
 export interface ApiStatResponse {
   update_at: string
-  '24h_total_volume': number
+  data: number
+  name: string
+  token: string
+  symbol: string
+  price: number
+  price_Matic: number
   total_value_locked: number
   total_value_locked_all: number
   trade_pairs: {

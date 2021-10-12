@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import BigNumber from 'bignumber.js'
 import { useWeb3React } from '@web3-react/core'
-import { getBep20Contract, getDustContract } from 'utils/contractHelpers'
+import { getERC20Contract, getPdustContract } from 'utils/contractHelpers'
 import useWeb3 from './useWeb3'
 import useRefresh from './useRefresh'
 
@@ -13,7 +13,7 @@ const useTokenBalance = (tokenAddress: string) => {
 
   useEffect(() => {
     const fetchBalance = async () => {
-      const contract = getBep20Contract(tokenAddress, web3)
+      const contract = getERC20Contract(tokenAddress, web3)
       const res = await contract.methods.balanceOf(account).call()
       setBalance(new BigNumber(res))
     }
@@ -32,8 +32,8 @@ export const useTotalSupply = () => {
 
   useEffect(() => {
     async function fetchTotalSupply() {
-      const DustContract = getDustContract()
-      const supply = await DustContract.methods.totalSupply().call()
+      const PdustContract = getPdustContract()
+      const supply = await PdustContract.methods.totalSupply().call()
       setTotalSupply(new BigNumber(supply))
     }
 
@@ -50,7 +50,7 @@ export const useBurnedBalance = (tokenAddress: string) => {
 
   useEffect(() => {
     const fetchBalance = async () => {
-      const contract = getBep20Contract(tokenAddress, web3)
+      const contract = getERC20Contract(tokenAddress, web3)
       const res = await contract.methods.balanceOf('0x000000000000000000000000000000000000dEaD').call()
       setBalance(new BigNumber(res))
     }

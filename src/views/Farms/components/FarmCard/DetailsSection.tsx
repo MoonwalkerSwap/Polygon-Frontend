@@ -1,10 +1,10 @@
 import React from 'react'
 import useI18n from 'hooks/useI18n'
 import styled from 'styled-components'
-import { Text, Flex, Link, LinkExternal } from 'moonwalkerswap-uikit'
+import { Text, Flex, Link, LinkExternal } from 'polygon-moonwalkerswap-uikit'
 
 export interface ExpandableSectionProps {
-  bscScanAddress?: string
+  polygonScanAddress?: string
   removed?: boolean
   totalValueFormated?: string
   lpLabel?: string
@@ -31,7 +31,7 @@ const StyledLinkExternal = styled(LinkExternal)`
 `
 
 const DetailsSection: React.FC<ExpandableSectionProps> = ({
-  bscScanAddress,
+  polygonScanAddress,
   removed,
   totalValueFormated,
   lpLabel,
@@ -52,8 +52,8 @@ const DetailsSection: React.FC<ExpandableSectionProps> = ({
         </Flex>
       )}
       <Flex justifyContent="flex-start">
-        <Link external href={bscScanAddress} bold={false}>
-          {TranslateString(356, 'View on BscScan')}
+        <Link external href={polygonScanAddress} bold={false}>
+          {TranslateString(356, 'View on PolygonScan')}
         </Link>
       </Flex>
     </Wrapper>

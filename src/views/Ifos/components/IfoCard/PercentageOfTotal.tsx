@@ -1,6 +1,6 @@
 import React from 'react'
 import BigNumber from 'bignumber.js'
-import { Text } from 'moonwalkerswap-uikit'
+import { Text } from 'polygon-moonwalkerswap-uikit'
 import { UserInfo } from 'views/Ifos/hooks/useGetWalletIfoData'
 import useI18n from 'hooks/useI18n'
 

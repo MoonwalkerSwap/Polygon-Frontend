@@ -1,5 +1,5 @@
 import React from 'react'
-import { Tag, VerifiedIcon, CommunityIcon, BinanceIcon } from 'moonwalkerswap-uikit'
+import { Tag, VerifiedIcon, CommunityIcon, PolygonIcon } from 'polygon-moonwalkerswap-uikit'
 
 const CoreTag = (props) => (
   <Tag variant="textSubtle" outline startIcon={<VerifiedIcon />} {...props}>
@@ -13,9 +13,9 @@ const CommunityTag = (props) => (
   </Tag>
 )
 
-const BinanceTag = (props) => (
-  <Tag variant="binance" outline startIcon={<BinanceIcon />} {...props}>
-    Binance
+const PolygonTag = (props) => (
+  <Tag variant="polygon" outline startIcon={<PolygonIcon />} {...props}>
+    Polygon
   </Tag>
 )
 
@@ -25,4 +25,4 @@ const DualTag = (props) => (
   </Tag>
 )
 
-export { CoreTag, CommunityTag, BinanceTag, DualTag }
+export { CoreTag, CommunityTag, PolygonTag, DualTag }

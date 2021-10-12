@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { useCountUp } from 'react-countup'
-import { Text } from 'moonwalkerswap-uikit'
+import { Text } from 'polygon-moonwalkerswap-uikit'
 
 export interface CardValueProps {
   value: number

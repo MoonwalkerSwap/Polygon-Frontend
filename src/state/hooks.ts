@@ -2,7 +2,7 @@ import { useEffect, useMemo } from 'react'
 import BigNumber from 'bignumber.js'
 import { kebabCase } from 'lodash'
 import { useWeb3React } from '@web3-react/core'
-import { Toast, toastTypes } from 'moonwalkerswap-uikit'
+import { Toast, toastTypes } from 'polygon-moonwalkerswap-uikit'
 import { useSelector, useDispatch } from 'react-redux'
 import { getWeb3NoAccount } from 'utils/web3'
 import useRefresh from 'hooks/useRefresh'
@@ -157,9 +157,9 @@ export const useGetApiPrice = (token: string) => {
   return prices[token.toLowerCase()]
 }
 
-export const usePriceDustBusd = (): BigNumber => {
-  const dustPrice = useGetApiPrice('dust')
-  return new BigNumber(dustPrice)
+export const usePricePdustMatic = (): BigNumber => {
+  const pdustPrice = useGetApiPrice('pdust')
+  return new BigNumber(pdustPrice)
 }
 
 // Block

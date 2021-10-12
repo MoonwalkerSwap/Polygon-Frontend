@@ -9,7 +9,7 @@ import {
   Button,
   ChevronDownIcon,
   ChevronUpIcon,
-} from 'moonwalkerswap-uikit'
+} from 'polygon-moonwalkerswap-uikit'
 import useI18n from 'hooks/useI18n'
 import { Ifo } from 'config/constants/types'
 import { PublicIfoState } from '../../hooks/useGetPublicIfoData'
@@ -32,7 +32,7 @@ const Display = styled(Text)`
 const IfoCardDetails: React.FC<IfoCardDetailsProps> = ({ ifo, publicIfoData }) => {
   const [isOpen, setIsOpen] = useState(false)
   const TranslateString = useI18n()
-  const { description, dustToBurn, projectSiteUrl, launchDate, launchTime, saleAmount, raiseAmount } = ifo
+  const { description, pdustToBurn, projectSiteUrl, launchDate, launchTime, saleAmount, raiseAmount } = ifo
   const { raisingAmount, totalAmount } = publicIfoData
   const handleToggle = () => setIsOpen(!isOpen)
 
@@ -78,8 +78,8 @@ const IfoCardDetails: React.FC<IfoCardDetailsProps> = ({ ifo, publicIfoData }) =
               <Text>{raiseAmount}</Text>
             </Item>
             <Item>
-              <Display>{TranslateString(586, 'DUST to burn (USD)')}</Display>
-              <Text>{dustToBurn}</Text>
+              <Display>{TranslateString(586, 'pDUST to burn (USD)')}</Display>
+              <Text>{pdustToBurn}</Text>
             </Item>
             <Item>
               <Display>{TranslateString(999, 'Total raised (% of target)')}</Display>

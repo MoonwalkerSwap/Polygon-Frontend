@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { ChevronDownIcon, ChevronUpIcon, Text } from 'moonwalkerswap-uikit'
+import { ChevronDownIcon, ChevronUpIcon, Text } from 'polygon-moonwalkerswap-uikit'
 
 export interface ExpandableSectionButtonProps {
   onClick?: () => void

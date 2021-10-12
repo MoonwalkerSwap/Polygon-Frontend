@@ -4,16 +4,16 @@ import styled from 'styled-components'
 import { getBalanceNumber } from 'utils/formatBalance'
 import useI18n from 'hooks/useI18n'
 import { ChevronDown, ChevronUp } from 'react-feather'
-import { Flex, MetamaskIcon } from 'moonwalkerswap-uikit'
+import { Flex, MetamaskIcon } from 'polygon-moonwalkerswap-uikit'
 import Balance from 'components/Balance'
-import { CommunityTag, CoreTag, BinanceTag } from 'components/Tags'
+import { CommunityTag, CoreTag, PolygonTag } from 'components/Tags'
 import { useBlock } from 'state/hooks'
 import { PoolCategory } from 'config/constants/types'
 import { registerToken } from 'utils/wallet'
 import { BASE_URL } from 'config'
 
 const tags = {
-  [PoolCategory.BINANCE]: BinanceTag,
+  [PoolCategory.POLYGON]: PolygonTag,
   [PoolCategory.CORE]: CoreTag,
   [PoolCategory.COMMUNITY]: CommunityTag,
 }

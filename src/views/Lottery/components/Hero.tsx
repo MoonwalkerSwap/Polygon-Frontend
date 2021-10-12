@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Heading, Text } from 'moonwalkerswap-uikit'
+import { Heading, Text } from 'polygon-moonwalkerswap-uikit'
 import useI18n from 'hooks/useI18n'
 import Container from 'components/layout/Container'
 import LotteryProgress from './LotteryProgress'
@@ -70,8 +70,8 @@ const Hero = () => {
     <StyledHero>
       <StyledContainer>
         <LeftWrapper>
-          <Title>{TranslateString(708, 'The DUST Lottery')}</Title>
-          <Blurb>{TranslateString(710, 'Buy tickets with DUST')}</Blurb>
+          <Title>{TranslateString(708, 'The pDUST Lottery')}</Title>
+          <Blurb>{TranslateString(710, 'Buy tickets with pDUST')}</Blurb>
           <Blurb>{TranslateString(712, 'Win if 2, 3, or 4 of your ticket numbers match!')}</Blurb>
         </LeftWrapper>
         <RightWrapper>

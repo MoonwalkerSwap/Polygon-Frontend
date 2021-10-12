@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { Heading } from 'moonwalkerswap-uikit'
+import { Heading } from 'polygon-moonwalkerswap-uikit'
 
 const Title = styled(Heading).attrs({ size: 'lg' })`
   color: ${({ theme }) => theme.colors.secondary};

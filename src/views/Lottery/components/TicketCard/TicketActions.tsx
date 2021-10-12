@@ -1,12 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Button, useModal } from 'moonwalkerswap-uikit'
+import { Button, useModal } from 'polygon-moonwalkerswap-uikit'
 import useI18n from 'hooks/useI18n'
 import useGetLotteryHasDrawn from 'hooks/useGetLotteryHasDrawn'
 import { useLotteryAllowance } from 'hooks/useAllowance'
 import useTickets from 'hooks/useTickets'
 import useTokenBalance from 'hooks/useTokenBalance'
-import { getDustAddress } from 'utils/addressHelpers'
+import { getPdustAddress } from 'utils/addressHelpers'
 import { useApproval } from 'hooks/useApproval'
 import BuyTicketModal from './BuyTicketModal'
 import MyTicketsModal from './UserTicketsModal'
@@ -26,12 +26,12 @@ const TicketCard: React.FC = () => {
   const TranslateString = useI18n()
   const allowance = useLotteryAllowance()
   const lotteryHasDrawn = useGetLotteryHasDrawn()
-  const dustBalance = useTokenBalance(getDustAddress())
+  const pdustBalance = useTokenBalance(getPdustAddress())
   const tickets = useTickets()
   const ticketsLength = tickets.length
   const [onPresentMyTickets] = useModal(<MyTicketsModal myTicketNumbers={tickets} from="buy" />)
   const [onPresentApprove] = useModal(<PurchaseWarningModal />)
-  const [onPresentBuy] = useModal(<BuyTicketModal max={dustBalance} tokenName="DUST" />)
+  const [onPresentBuy] = useModal(<BuyTicketModal max={pdustBalance} tokenName="pDUST" />)
   const { handleApprove, requestedApproval } = useApproval(onPresentApprove)
 
   const renderLotteryTicketButtons = () => {
@@ -42,7 +42,7 @@ const TicketCard: React.FC = () => {
             {TranslateString(432, 'View your tickets')}
           </Button>
           <Button width="100%" disabled={requestedApproval} onClick={handleApprove}>
-            {TranslateString(494, 'Approve DUST')}
+            {TranslateString(494, 'Approve pDUST')}
           </Button>
         </>
       )

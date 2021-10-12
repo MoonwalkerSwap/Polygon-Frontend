@@ -1,7 +1,7 @@
 // @ts-nocheck
 import React from 'react'
 import styled from 'styled-components'
-import { Button, Text } from 'moonwalkerswap-uikit'
+import { Button, Text } from 'polygon-moonwalkerswap-uikit'
 import useI18n from 'hooks/useI18n'
 import Page from 'components/layout/Page'
 import Container from 'components/layout/Container'
@@ -55,20 +55,20 @@ const ComingSoon = () => {
       <Content>
         <div>
           <Block>
-            <Title as="h2">{TranslateString(999, 'Coming Soon to JetSwap.')}</Title>
+            <Title as="h2">{TranslateString(999, 'Coming Soon to Polygon-MoonwalkerSwap.')}</Title>
             <Text mb={3}>
               {TranslateString(
                 504,
-                'You’ll pay for the new tokens using DUST-BNB LP tokens, which means you need to stake equal amounts of DUST and BNB in a liquidity pool to take part.',
+                'You’ll pay for the new tokens using pDUST-MATIC LP tokens, which means you need to stake equal amounts of pDUST and MATIC in a liquidity pool to take part.',
               )}
             </Text>
             <Text mb={3}>
-              <LiquidityLink href="https://swap.moonwalker.network/add/BNB/0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82">
-                {TranslateString(506, 'Get DUST-BNB LP >')}
+              <LiquidityLink href="https://polygon-swap.moonwalker.network/add/MATIC/0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270">
+                {TranslateString(506, 'Get pDUST-MATIC LP >')}
               </LiquidityLink>
             </Text>
             <Text mb={3}>
-              {TranslateString(508, 'The project gets the BNB, MoonWalkerSwap burns the DUST.')}
+              {TranslateString(508, 'The project gets the MATIC, Polygon-MoonWalkerSwap burns the pDUST.')}
               <br />
               <strong>{TranslateString(510, 'You get the tokens.')}</strong>
             </Text>
@@ -79,12 +79,12 @@ const ComingSoon = () => {
             <Text mb={3}>
               {TranslateString(
                 514,
-                'Launch your project with MoonWalkerSwap, Binance Smart Chain’s most-used AMM project and liquidity provider, to bring your token directly to the most active and rapidly growing community on BSC.',
+                'Launch your project with MoonWalkerSwap, Polygon Chain’s most-used AMM project and liquidity provider, to bring your token directly to the most active and rapidly growing community on Polygon.',
               )}
             </Text>
             <Button
               as="a"
-              href="https://docs.google.com/forms/d/e/1FAIpQLScGdT5rrVMr4WOWr08pvcroSeuIOtEJf1sVdQGVdcAOqryigQ/viewform"
+              href="https://form.jotform.com/212606130120031"
               target="_blank"
               rel="noopener noreferrer"
             >

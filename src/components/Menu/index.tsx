@@ -1,11 +1,11 @@
 import React, { useContext } from 'react'
-import { Menu as UikitMenu } from 'moonwalkerswap-uikit'
+import { Menu as UikitMenu } from 'polygon-moonwalkerswap-uikit'
 import { useWeb3React } from '@web3-react/core'
 import { allLanguages } from 'config/localisation/languageCodes'
 import { LanguageContext } from 'contexts/Localisation/languageContext'
 import useTheme from 'hooks/useTheme'
 import useAuth from 'hooks/useAuth'
-import { usePriceDustBusd } from 'state/hooks'
+import { usePricePdustMatic } from 'state/hooks'
 import config from './config'
 
 const Menu = (props) => {
@@ -13,7 +13,7 @@ const Menu = (props) => {
   const { login, logout } = useAuth()
   const { selectedLanguage, setSelectedLanguage } = useContext(LanguageContext)
   const { isDark, toggleTheme } = useTheme()
-  const dustPriceUsd = usePriceDustBusd()
+  const pdustPriceUsd = usePricePdustMatic()
 
   return (
     <UikitMenu
@@ -25,7 +25,7 @@ const Menu = (props) => {
       currentLang={selectedLanguage && selectedLanguage.code}
       langs={allLanguages}
       setLang={setSelectedLanguage}
-      dustPriceUsd={dustPriceUsd.toNumber()}
+      pdustPriceUsd={pdustPriceUsd.toNumber()}
       links={config}
       {...props}
     />

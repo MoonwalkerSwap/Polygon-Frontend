@@ -16,7 +16,7 @@ export const getIfos = (data) => {
       launchTime: format(lunchTime2, 'HH:mm:ss'),
       saleAmount: ifo.sale_amount,
       raiseAmount: ifo.raise_amount,
-      dustToBurn: ifo.burn_amount,
+      pdustToBurn: ifo.burn_amount,
       projectSiteUrl: ifo.project_url,
       currency: ifo.currency,
       currencyAddress: ifo.currency_address,
@@ -30,14 +30,14 @@ export const getIfos = (data) => {
 export const getPools = (data) => {
   const pools: PoolConfig = data.map((pool) => {
     return {
-      sousId: pool.sous_id,
+      spaceChefId: pool.spaceChef_id,
       tokenName: pool?.token?.name,
       stakingTokenName: pool?.quote_token?.name,
       stakingLimit: pool?.staking_limit,
       stakingTokenAddress: pool?.quote_token?.mainnet_address,
       contractAddress: {
-        56: pool.contract_address,
-        97: '0xd3af5fe61dbaf8f73149bfcfa9fb653ff096029a',
+        137: pool.contract_address,
+        137: '0x3fb0087842b7ebd57be8024aaf32cc6a390c13d5',
       },
       poolCategory: pool.category,
       projectLink: pool.project_url,
@@ -57,13 +57,13 @@ export const getFarms = (data) => {
       pid: farm.pid,
       lpSymbol: farm.lp_symbol,
       lpAddresses: {
-        56: farm.lp_mainnet_address,
-        97: '0x9cDf469a82b20108DF6a52469Ca4ddc42E76Ef53',
+        137: farm.lp_mainnet_address,
+        137: '0x3fb0087842b7ebd57be8024aaf32cc6a390c13d5',
       },
       tokenSymbol: farm?.token?.symbol,
       tokenAddresses: {
-        56: farm?.token?.mainnet_address,
-        97: '0x9cDf469a82b20108DF6a52469Ca4ddc42E76Ef53',
+        137: farm?.token?.mainnet_address,
+        137: '0x3fb0087842b7ebd57be8024aaf32cc6a390c13d5',
       },
       quoteTokenSymbol: farm?.quote_token?.symbol,
       quoteTokenAdresses: farm?.quote_token?.mainnet_address,

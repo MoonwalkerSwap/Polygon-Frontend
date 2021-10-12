@@ -3,7 +3,7 @@ import { Route, useRouteMatch } from 'react-router-dom'
 import BigNumber from 'bignumber.js'
 import styled from 'styled-components'
 import { useWeb3React } from '@web3-react/core'
-import { Heading, Text } from 'moonwalkerswap-uikit'
+import { Heading, Text } from 'polygon-moonwalkerswap-uikit'
 import orderBy from 'lodash/orderBy'
 import partition from 'lodash/partition'
 import useI18n from 'hooks/useI18n'
@@ -43,7 +43,7 @@ const Farm: React.FC = () => {
               {TranslateString(738, 'Space Pool')}
             </Heading>
             <ul>
-              <li><Text>{TranslateString(580, 'Stake DUST to earn new tokens.')}</Text></li>
+              <li><Text>{TranslateString(580, 'Stake pDUST to earn new tokens.')}</Text></li>
               <li><Text>{TranslateString(486, 'You can unstake at any time.')}</Text></li>
               <li><Text>{TranslateString(406, 'Rewards are calculated per block.')}</Text></li>
             </ul>

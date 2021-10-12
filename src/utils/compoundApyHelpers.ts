@@ -1,13 +1,13 @@
 const roundToTwoDp = (number) => Math.round(number * 100) / 100
 
-export const calculateDustEarnedPerThousandDollars = ({ numberOfDays, farmApy, dustPrice }) => {
+export const calculatePdustEarnedPerThousandDollars = ({ numberOfDays, farmApy, pdustPrice }) => {
   // Everything here is worked out relative to a year, with the asset compounding daily
   const timesCompounded = 365
   //   We use decimal values rather than % in the math for both APY and the number of days being calculates as a proportion of the year
   const apyAsDecimal = farmApy / 100
   const daysAsDecimalOfYear = numberOfDays / timesCompounded
   //   Calculate the starting Dust balance with a dollar balance of $1000.
-  const principal = 1000 / dustPrice
+  const principal = 1000 / pdustPrice
 
   // This is a translation of the typical mathematical compounding APY formula. Details here: https://www.calculatorsoup.com/calculators/financial/compound-interest-calculator.php
   const finalAmount = principal * (1 + apyAsDecimal / timesCompounded) ** (timesCompounded * daysAsDecimalOfYear)

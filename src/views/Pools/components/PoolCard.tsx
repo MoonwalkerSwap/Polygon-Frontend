@@ -1,7 +1,7 @@
 import BigNumber from 'bignumber.js'
 import React, { useCallback, useState } from 'react'
 import styled from 'styled-components'
-import { Button, IconButton, useModal, AddIcon, Image } from 'moonwalkerswap-uikit'
+import { Button, IconButton, useModal, AddIcon, Image } from 'polygon-moonwalkerswap-uikit'
 import { useWeb3React } from '@web3-react/core'
 import UnlockButton from 'components/UnlockButton'
 import Label from 'components/Label'
@@ -58,15 +58,15 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
     stakingLimit,
   } = pool
 
-  // Pools using native BNB may behave differently than pools using a token
-  const isBnbPool = poolCategory === PoolCategory.BINANCE
+  // Pools using native MATIC may behave differently than pools using a token
+  const isMaticPool = poolCategory === PoolCategory.POLYGON
   const TranslateString = useI18n()
   const stakingTokenContract = useERC20(stakingToken.address ? getAddress(stakingToken.address) : '')
   const { account } = useWeb3React()
   const { onApprove } = useSpaceChefApprove(stakingTokenContract, spaceChefId)
-  const { onStake } = useSpaceChefStake(spaceChefId, isBnbPool)
+  const { onStake } = useSpaceChefStake(spaceChefId, isMaticPool)
   const { onUnstake } = useSpaceChefUnstake(spaceChefId)
-  const { onReward } = useSpaceChefHarvest(spaceChefId, isBnbPool)
+  const { onReward } = useSpaceChefHarvest(spaceChefId, isMaticPool)
 
   // APY
   const rewardTokenPrice = useGetApiPrice(earningToken.symbol)
@@ -87,7 +87,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
   const earnings = new BigNumber(userData?.pendingReward || 0)
 
   const accountHasStakedBalance = stakedBalance?.toNumber() > 0
-  const needsApproval = !accountHasStakedBalance && !allowance.toNumber() && !isBnbPool
+  const needsApproval = !accountHasStakedBalance && !allowance.toNumber() && !isMaticPool
   const isCardActive = isFinished && accountHasStakedBalance
 
   const convertedLimit = new BigNumber(stakingLimit).multipliedBy(new BigNumber(10).pow(earningToken.decimals))
@@ -135,7 +135,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
         </CardTitle>
         <div style={{ marginBottom: '8px', display: 'flex', alignItems: 'center' }}>
           <div style={{ flex: 1 }}>
-            <Image src={`/images/tokens/dust.png`} alt={earningToken.symbol} width={64} height={64} />
+            <Image src={`/images/tokens/pdust.png`} alt={earningToken.symbol} width={64} height={64} />
             {/* <Image src='/images/moon/circle.svg' alt={earningToken.symbol} width={64} height={64} /> */}
           </div>
           {account && harvest && (

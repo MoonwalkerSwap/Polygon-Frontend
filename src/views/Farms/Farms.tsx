@@ -7,7 +7,7 @@ import { Image, Heading, RowType, Toggle, Text } from 'moonwalkerswap-uikit'
 import styled from 'styled-components'
 import FlexLayout from 'components/layout/Flex'
 import Page from 'components/layout/Page'
-import { useFarms, usePriceDustBusd, useGetApiPrices } from 'state/hooks'
+import { useFarms, usePricePdustMatic, useGetApiPrices } from 'state/hooks'
 import useRefresh from 'hooks/useRefresh'
 import { fetchFarmUserDataAsync } from 'state/actions'
 import { Farm } from 'state/types'
@@ -132,7 +132,7 @@ const Farms: React.FC = () => {
   const { pathname } = useLocation()
   const TranslateString = useI18n()
   const farmsLP = useFarms()
-  const dustPrice = usePriceDustBusd()
+  const pdustPrice = usePricePdustMatic()
   const [query, setQuery] = useState('')
   const [viewMode, setViewMode] = useState(ViewMode.TABLE)
   const { account } = useWeb3React()
@@ -184,7 +184,7 @@ const Farms: React.FC = () => {
 
         const quoteTokenPriceUsd = prices[farm.quoteToken.symbol.toLowerCase()]
         const totalLiquidity = new BigNumber(farm.lpTotalInQuoteToken).times(quoteTokenPriceUsd)
-        const apy = getFarmApy(farm.poolWeight, dustPrice, totalLiquidity)
+        const apy = getFarmApy(farm.poolWeight, pdustPrice, totalLiquidity)
 
         return { ...farm, apy, liquidity: totalLiquidity }
       })
@@ -201,7 +201,7 @@ const Farms: React.FC = () => {
       }
       return farmsToDisplayWithAPY
     },
-    [dustPrice, prices, query],
+    [pdustPrice, prices, query],
   )
 
   const handleChangeQuery = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -230,7 +230,7 @@ const Farms: React.FC = () => {
         quoteTokenAdresses,
         quoteTokenSymbol,
         tokenAddresses,
-        dustPrice,
+        pdustPrice,
         originalValue: farm.apy,
       },
       farm: {
@@ -289,12 +289,12 @@ const Farms: React.FC = () => {
         <FlexLayout>
           <Route exact path={`${path}`}>
             {farmsStaked.map((farm) => (
-              <FarmCard key={farm.pid} farm={farm} dustPrice={dustPrice} account={account} removed={false} />
+              <FarmCard key={farm.pid} farm={farm} pdustPrice={pdustPrice} account={account} removed={false} />
             ))}
           </Route>
           <Route exact path={`${path}/history`}>
             {farmsStaked.map((farm) => (
-              <FarmCard key={farm.pid} farm={farm} dustPrice={dustPrice} account={account} removed />
+              <FarmCard key={farm.pid} farm={farm} pdustPrice={pdustPrice} account={account} removed />
             ))}
           </Route>
         </FlexLayout>
@@ -314,7 +314,7 @@ const Farms: React.FC = () => {
             {TranslateString(999, 'Farms')}
           </Heading>
           <Heading size="lg" color="text">
-            {TranslateString(999, 'Stake LP tokens to earn DUST.')}
+            {TranslateString(999, 'Stake LP tokens to earn pDUST.')}
           </Heading>
         </Container>
         <Container2>

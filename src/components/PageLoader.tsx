@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Spinner } from 'moonwalkerswap-uikit'
+import { Spinner } from 'polygon-moonwalkerswap-uikit'
 import Page from './layout/Page'
 
 const Wrapper = styled(Page)`
@@ -8,7 +8,7 @@ const Wrapper = styled(Page)`
   justify-content: center;
   align-items: center;
 `
-
+ 
 const PageLoader: React.FC = () => {
   return (
     <Wrapper>

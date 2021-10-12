@@ -1,4 +1,4 @@
-# Contributing to the MoonWalkerSwap ecosystem 🥞
+# Contributing to the Polygon MoonWalkerSwap ecosystem 🥞
 
 Thanks for taking the time to contribute !
 You can start by reading our [Contribution guidelines](https://docs.moonwalker.network/contributing) first.
@@ -64,5 +64,5 @@ TranslateString(id, 'fallback', data)
 If a Crowdin translation like this `You have %num% left in your wallet` - would look something like:
 
 ```
-TranslateString(675, `You have ${dustBalance} left in your wallet`, { num: dustBalance })
+TranslateString(675, `You have ${pdustBalance} left in your wallet`, { num: pdustBalance })
 ```

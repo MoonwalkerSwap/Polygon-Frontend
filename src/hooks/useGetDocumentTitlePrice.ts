@@ -1,10 +1,10 @@
 import { useEffect } from 'react'
-import { usePriceDustBusd } from 'state/hooks'
+import { usePricePdustMatic } from 'state/hooks'
 
 const useGetDocumentTitlePrice = () => {
-  const dustPriceUsd = usePriceDustBusd()
+  const pdustPriceUsd = usePricePdustMatic()
   useEffect(() => {
-    document.title = `MoonWalkerSwap - $${Number(dustPriceUsd).toLocaleString(undefined, {
+    document.title = `MoonWalkerSwap - $${Number(pdustPriceUsd).toLocaleString(undefined, {
       minimumFractionDigits: 3,
       maximumFractionDigits: 3,
     })}`

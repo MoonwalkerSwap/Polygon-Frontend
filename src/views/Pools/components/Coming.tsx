@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Image, Button } from 'moonwalkerswap-uikit'
+import { Image, Button } from 'polygon-moonwalkerswap-uikit'
 import { CommunityTag } from 'components/Tags'
 import useI18n from 'hooks/useI18n'
 import Card from './Card'
@@ -50,7 +50,7 @@ const Coming: React.FC = () => {
         <Button
           variant="secondary"
           as="a"
-          href="https://dislack.com/send/613f92f10290646826f37ba4"
+          href="https://form.jotform.com/212606130120031"
           external
           width="100%"
           mb="16px"
@@ -68,7 +68,7 @@ const Coming: React.FC = () => {
             </span>
             {TranslateString(384, 'Your Stake')}:
           </div>
-          <Value>??? DUST</Value>
+          <Value>??? pDUST</Value>
         </DetailPlaceholder>
       </div>
       <Footer>

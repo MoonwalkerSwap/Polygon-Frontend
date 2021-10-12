@@ -1,6 +1,6 @@
 import React, { ButtonHTMLAttributes } from 'react'
 import styled from 'styled-components'
-import { Button, Text } from 'moonwalkerswap-uikit'
+import { Button, Text } from 'polygon-moonwalkerswap-uikit'
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   value: string

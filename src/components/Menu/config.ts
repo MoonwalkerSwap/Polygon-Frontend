@@ -1,4 +1,4 @@
-import { MenuEntry } from 'moonwalkerswap-uikit'
+import { MenuEntry } from 'polygon-moonwalkerswap-uikit'
 
 const config: MenuEntry[] = [
   {
@@ -12,11 +12,11 @@ const config: MenuEntry[] = [
     items: [
       {
         label: 'Exchange',
-        href: 'https://swap.moonwalker.network',
+        href: 'https://polygon-swap.moonwalker.network',
       },
       {
         label: 'Liquidity',
-        href: 'https://swap.moonwalker.network',
+        href: 'https://polygon-swap.moonwalker.network',
       },
     ],
   },
@@ -30,59 +30,30 @@ const config: MenuEntry[] = [
     icon: 'PoolIcon',
     href: '/pools',
   },
-  // {
-  //   label: 'Lottery',
-  //   icon: 'TicketIcon',
-  //   href: '/lottery',
-  // },
-  // {
-  //   label: 'Collectibles',
-  //   icon: 'NftIcon',
-  //   href: '/collectibles',
-  // },
-  // {
-  //   label: 'Teams & Profile',
-  //   icon: 'GroupsIcon',
-  //   calloutClass: 'rainbow',
-  //   items: [
-  //     {
-  //       label: 'Leaderboard',
-  //       href: '/teams',
-  //     },
-  //     {
-  //       label: 'Task Center',
-  //       href: '/profile/tasks',
-  //     },
-  //     {
-  //       label: 'Your Profile',
-  //       href: '/profile',
-  //     },
-  //   ],
-  // },
   {
     label: 'Info',
     icon: 'InfoIcon',
     items: [
       {
         label: 'Overview',
-        href: 'https://info.moonwalker.network',
+        href: 'https://polygon-info.moonwalker.network',
       },
       {
         label: 'Tokens',
-        href: 'https://info.moonwalker.network/tokens',
+        href: 'https://polygon-info.moonwalker.network/tokens',
       },
       {
         label: 'Pairs',
-        href: 'https://info.moonwalker.network/pairs',
+        href: 'https://polygon-info.moonwalker.network/pairs',
       },
       {
         label: 'Accounts',
-        href: 'https://info.moonwalker.network/accounts',
+        href: 'https://polygon-info.moonwalker.network/accounts',
       },
     ],
   },
   {
-     label: 'IDO',
+     label: 'IFO',
      icon: 'IfoIcon',
      href: '/ifo',
   },
@@ -96,7 +67,7 @@ const config: MenuEntry[] = [
       },
       {
         label: 'Docs',
-        href: 'https://docs.moonwalker.network',
+        href: 'https://polygon-docs.moonwalker.network',
       },
       {
         label: 'Blog',

@@ -1,7 +1,7 @@
 {
-  "short_name": "MoonWalkerSwap",
-  "name": "MoonWalkerSwap",
-  "description": "Farm Dust with MoonWalkerSwap DLP Tokens",
+  "short_name": "Polygon-MoonWalkerSwap",
+  "name": "Polygon-MoonWalkerSwap",
+  "description": "Farm pDust with MoonWalkerSwap LP Tokens",
   "icons": [
     {
       "src": "favicon.ico",

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Flex, Skeleton } from 'moonwalkerswap-uikit'
+import { Box, Flex, Skeleton } from 'polygon-moonwalkerswap-uikit'
 
 const InactiveSkeleton = () => (
   <>

@@ -2,7 +2,7 @@ import { useCallback } from 'react'
 import { useWeb3React } from '@web3-react/core'
 import { useDispatch } from 'react-redux'
 import { fetchFarmUserDataAsync, updateUserStakedBalance, updateUserBalance } from 'state/actions'
-import { stake, spaceChefStake, spaceChefStakeBnb } from 'utils/callHelpers'
+import { stake, spaceChefStake, spaceChefStakeMatic } from 'utils/callHelpers'
 import { useAstroChef, useSpaceChef } from './useContract'
 
 const useStake = (pid: number) => {
@@ -22,7 +22,7 @@ const useStake = (pid: number) => {
   return { onStake: handleStake }
 }
 
-export const useSpaceChefStake = (spaceChefId, isUsingBnb = false) => {
+export const useSpaceChefStake = (spaceChefId, isUsingMatic = false) => {
   const dispatch = useDispatch()
   const { account } = useWeb3React()
   const astroChefContract = useAstroChef()
@@ -32,15 +32,15 @@ export const useSpaceChefStake = (spaceChefId, isUsingBnb = false) => {
     async (amount: string, decimals: number) => {
       if (spaceChefId === 0) {
         await stake(astroChefContract, 0, amount, account)
-      } else if (isUsingBnb) {
-        await spaceChefStakeBnb(spaceChefContract, amount, account)
+      } else if (isUsingMatic) {
+        await spaceChefStakeMatic(spaceChefContract, amount, account)
       } else {
         await spaceChefStake(spaceChefContract, amount, decimals, account)
       }
       dispatch(updateUserStakedBalance(spaceChefId, account))
       dispatch(updateUserBalance(spaceChefId, account))
     },
-    [account, dispatch, astroChefContract, isUsingBnb, spaceChefContract, spaceChefId],
+    [account, dispatch, astroChefContract, isUsingMatic, spaceChefContract, spaceChefId],
   )
 
   return { onStake: handleStake }

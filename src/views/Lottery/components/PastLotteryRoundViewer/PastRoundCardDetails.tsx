@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Heading, CardBody, CardFooter, PancakeRoundIcon, TicketRound } from 'moonwalkerswap-uikit'
+import { Heading, CardBody, CardFooter, PancakeRoundIcon, TicketRound } from 'polygon-moonwalkerswap-uikit'
 import useI18n from 'hooks/useI18n'
 import { DataResponse } from 'utils/getLotteryRoundData'
 import LotteryCardHeading from '../LotteryCardHeading'

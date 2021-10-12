@@ -1,14 +1,14 @@
 import React from 'react'
 import BigNumber from 'bignumber.js'
 import styled from 'styled-components'
-import { Modal, Text, LinkExternal, Flex } from 'moonwalkerswap-uikit'
+import { Modal, Text, LinkExternal, Flex } from 'polygon-moonwalkerswap-uikit'
 import useI18n from 'hooks/useI18n'
-import { calculateDustEarnedPerThousandDollars, apyModalRoi } from 'utils/compoundApyHelpers'
+import { calculatePdustEarnedPerThousandDollars, apyModalRoi } from 'utils/compoundApyHelpers'
 
 interface ApyCalculatorModalProps {
   onDismiss?: () => void
   lpLabel?: string
-  dustPrice?: BigNumber
+  pdustPrice?: BigNumber
   apy?: number
   addLiquidityUrl?: string
 }
@@ -32,20 +32,20 @@ const Description = styled(Text)`
 const ApyCalculatorModal: React.FC<ApyCalculatorModalProps> = ({
   onDismiss,
   lpLabel,
-  dustPrice,
+  pdustPrice,
   apy,
   addLiquidityUrl,
 }) => {
   const TranslateString = useI18n()
-  const oneThousandDollarsWorthOfDust = 1000 / dustPrice.toNumber()
+  const oneThousandDollarsWorthOfPdust = 1000 / pdustPrice.toNumber()
 
-  const dustEarnedPerThousand1D = calculateDustEarnedPerThousandDollars({ numberOfDays: 1, farmApy: apy, dustPrice })
-  const dustEarnedPerThousand7D = calculateDustEarnedPerThousandDollars({ numberOfDays: 7, farmApy: apy, dustPrice })
-  const dustEarnedPerThousand30D = calculateDustEarnedPerThousandDollars({ numberOfDays: 30, farmApy: apy, dustPrice })
-  const dustEarnedPerThousand365D = calculateDustEarnedPerThousandDollars({
+  const pdustEarnedPerThousand1D = calculatePdustEarnedPerThousandDollars({ numberOfDays: 1, farmApy: apy, pdustPrice })
+  const pdustEarnedPerThousand7D = calculatePdustEarnedPerThousandDollars({ numberOfDays: 7, farmApy: apy, pdustPrice })
+  const pdustEarnedPerThousand30D = calculatePdustEarnedPerThousandDollars({ numberOfDays: 30, farmApy: apy, pdustPrice })
+  const pdustEarnedPerThousand365D = calculatePdustEarnedPerThousandDollars({
     numberOfDays: 365,
     farmApy: apy,
-    dustPrice,
+    pdustPrice,
   })
 
   return (
@@ -72,11 +72,11 @@ const ApyCalculatorModal: React.FC<ApyCalculatorModalProps> = ({
         </GridItem>
         <GridItem>
           <Text>
-            {apyModalRoi({ amountEarned: dustEarnedPerThousand1D, amountInvested: oneThousandDollarsWorthOfDust })}%
+            {apyModalRoi({ amountEarned: pdustEarnedPerThousand1D, amountInvested: oneThousandDollarsWorthOfPdust })}%
           </Text>
         </GridItem>
         <GridItem>
-          <Text>{dustEarnedPerThousand1D}</Text>
+          <Text>{pdustEarnedPerThousand1D}</Text>
         </GridItem>
         {/* 7 day row */}
         <GridItem>
@@ -84,11 +84,11 @@ const ApyCalculatorModal: React.FC<ApyCalculatorModalProps> = ({
         </GridItem>
         <GridItem>
           <Text>
-            {apyModalRoi({ amountEarned: dustEarnedPerThousand7D, amountInvested: oneThousandDollarsWorthOfDust })}%
+            {apyModalRoi({ amountEarned: pdustEarnedPerThousand7D, amountInvested: oneThousandDollarsWorthOfPdust })}%
           </Text>
         </GridItem>
         <GridItem>
-          <Text>{dustEarnedPerThousand7D}</Text>
+          <Text>{pdustEarnedPerThousand7D}</Text>
         </GridItem>
         {/* 30 day row */}
         <GridItem>
@@ -96,11 +96,11 @@ const ApyCalculatorModal: React.FC<ApyCalculatorModalProps> = ({
         </GridItem>
         <GridItem>
           <Text>
-            {apyModalRoi({ amountEarned: dustEarnedPerThousand30D, amountInvested: oneThousandDollarsWorthOfDust })}%
+            {apyModalRoi({ amountEarned: pdustEarnedPerThousand30D, amountInvested: oneThousandDollarsWorthOfPdust })}%
           </Text>
         </GridItem>
         <GridItem>
-          <Text>{dustEarnedPerThousand30D}</Text>
+          <Text>{pdustEarnedPerThousand30D}</Text>
         </GridItem>
         {/* 365 day / APY row */}
         <GridItem>
@@ -108,11 +108,11 @@ const ApyCalculatorModal: React.FC<ApyCalculatorModalProps> = ({
         </GridItem>
         <GridItem>
           <Text>
-            {apyModalRoi({ amountEarned: dustEarnedPerThousand365D, amountInvested: oneThousandDollarsWorthOfDust })}%
+            {apyModalRoi({ amountEarned: pdustEarnedPerThousand365D, amountInvested: oneThousandDollarsWorthOfPdust })}%
           </Text>
         </GridItem>
         <GridItem>
-          <Text>{dustEarnedPerThousand365D}</Text>
+          <Text>{pdustEarnedPerThousand365D}</Text>
         </GridItem>
       </Grid>
       <Description fontSize="12px" color="textSubtle">

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import styled from 'styled-components'
-import { Modal, Text, Button, Flex, InjectedModalProps } from 'moonwalkerswap-uikit'
+import { Modal, Text, Button, Flex, InjectedModalProps } from 'polygon-moonwalkerswap-uikit'
 import history from 'routerHistory'
 import { delay } from 'lodash'
 import useI18n from 'hooks/useI18n'

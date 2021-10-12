@@ -1,12 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { useWeb3React } from '@web3-react/core'
-import { Button } from 'moonwalkerswap-uikit'
+import { Button } from 'polygon-moonwalkerswap-uikit'
 import BigNumber from 'bignumber.js'
 import { FarmWithStakedValue } from 'views/Farms/components/FarmCard/FarmCard'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { useHarvest } from 'hooks/useHarvest'
 import useI18n from 'hooks/useI18n'
-import { usePriceDustBusd } from 'state/hooks'
+import { usePricePdustMatic } from 'state/hooks'
 import { useCountUp } from 'react-countup'
 
 import { ActionContainer, ActionTitles, Title, Subtle, ActionContent, Earned, Staked } from './styles'
@@ -14,14 +14,14 @@ import { ActionContainer, ActionTitles, Title, Subtle, ActionContent, Earned, St
 const HarvestAction: React.FunctionComponent<FarmWithStakedValue> = ({ pid, userData }) => {
   const { account } = useWeb3React()
   const earningsBigNumber = userData && account ? new BigNumber(userData.earnings) : null
-  const dustPrice = usePriceDustBusd()
+  const pdustPrice = usePricePdustMatic()
   let earnings = null
   let earningsBusd = 0
   let displayBalance = '?'
 
   if (earningsBigNumber) {
     earnings = getBalanceNumber(earningsBigNumber)
-    earningsBusd = new BigNumber(earnings).multipliedBy(dustPrice).toNumber()
+    earningsBusd = new BigNumber(earnings).multipliedBy(pdustPrice).toNumber()
     displayBalance = earnings.toLocaleString()
   }
 
@@ -45,7 +45,7 @@ const HarvestAction: React.FunctionComponent<FarmWithStakedValue> = ({ pid, user
   return (
     <ActionContainer>
       <ActionTitles>
-        <Title>DUST </Title>
+        <Title>pDUST </Title>
         <Subtle>EARNED</Subtle>
       </ActionTitles>
       <ActionContent>

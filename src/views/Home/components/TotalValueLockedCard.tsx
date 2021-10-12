@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Card, CardBody, Heading, Skeleton, Text } from 'moonwalkerswap-uikit'
+import { Card, CardBody, Heading, Skeleton, Text } from 'polygon-moonwalkerswap-uikit'
 import useI18n from 'hooks/useI18n'
 import { useGetStats } from 'hooks/api'
 

@@ -27,21 +27,21 @@ const useUnstake = (pid: number) => {
   return { onUnstake: handleUnstake }
 }
 
-const ROCKETIDS = [5, 6, 3, 1, 22, 23]
+const SPACEBARIDS = [5, 6, 3, 1, 22, 23]
 
 export const useSpaceChefUnstake = (spaceChefId) => {
   const dispatch = useDispatch()
   const { account } = useWeb3React()
   const astroChefContract = useAstroChef()
   const spaceChefContract = useSpaceChef(spaceChefId)
-  const isOldRocket = ROCKETIDS.includes(spaceChefId)
+  const isOldSpacebar = SPACEBARIDS.includes(spaceChefId)
 
   const handleUnstake = useCallback(
     async (amount: string, decimals: number) => {
       if (spaceChefId === 0) {
         const txHash = await unstake(astroChefContract, 0, amount, account)
         console.info(txHash)
-      } else if (isOldRocket) {
+      } else if (isOldSpacebar) {
         const txHash = await spaceChefEmegencyUnstake(spaceChefContract, amount, account)
         console.info(txHash)
       } else {
@@ -52,7 +52,7 @@ export const useSpaceChefUnstake = (spaceChefId) => {
       dispatch(updateUserBalance(spaceChefId, account))
       dispatch(updateUserPendingReward(spaceChefId, account))
     },
-    [account, dispatch, isOldRocket, astroChefContract, spaceChefContract, spaceChefId],
+    [account, dispatch, isOldSpacebar, astroChefContract, spaceChefContract, spaceChefId],
   )
 
   return { onUnstake: handleUnstake }

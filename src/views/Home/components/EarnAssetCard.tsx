@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import orderBy from 'lodash/orderBy'
-import { Heading, Card, CardBody, Flex, ArrowForwardIcon } from 'moonwalkerswap-uikit'
+import { Heading, Card, CardBody, Flex, ArrowForwardIcon } from 'polygon-moonwalkerswap-uikit'
 import { NavLink } from 'react-router-dom'
 import pools from 'config/constants/pools'
 import { Pool } from 'state/types'
@@ -31,11 +31,11 @@ const Circle = styled.div`
 `
 
 const EarnAssetCard = () => {
-  const activeNonDustPools = pools.filter((pool) => !pool.isFinished && !pool.earningToken.symbol.includes('CAKE'))
+  const activeNonPdustPools = pools.filter((pool) => !pool.isFinished && !pool.earningToken.symbol.includes('pDUST'))
   // eslint-disable-next-line
-  const latestPools: Pool[] = orderBy(activeNonDustPools, ['sortOrder', 'pid'], ['desc', 'desc']).slice(0, 3)
-  // Always include DUST
-  const assets = ['DUST'].join(', ')
+  const latestPools: Pool[] = orderBy(activeNonPdustPools, ['sortOrder', 'pid'], ['desc', 'desc']).slice(0, 3)
+  // Always include pDUST
+  const assets = ['pDUST'].join(', ')
 
   return (
     <StyledFarmStakingCard>

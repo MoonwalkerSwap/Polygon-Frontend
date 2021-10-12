@@ -1,9 +1,9 @@
 import poolsConfig from 'config/constants/pools'
 import spaceChefABI from 'config/abi/spaceChef.json'
-import dustABI from 'config/abi/dust.json'
-import wbnbABI from 'config/abi/weth.json'
+import pdustABI from 'config/abi/pdust.json'
+import wmaticABI from 'config/abi/wmatic.json'
 import multicall from 'utils/multicall'
-import { getAddress, getWbnbAddress } from 'utils/addressHelpers'
+import { getAddress, getWmaticAddress } from 'utils/addressHelpers'
 import BigNumber from 'bignumber.js'
 
 export const fetchPoolsBlockLimits = async () => {
@@ -24,11 +24,11 @@ export const fetchPoolsBlockLimits = async () => {
   const starts = await multicall(spaceChefABI, callsStartBlock)
   const ends = await multicall(spaceChefABI, callsEndBlock)
 
-  return poolsWithEnd.map((dustPoolConfig, index) => {
+  return poolsWithEnd.map((pdustPoolConfig, index) => {
     const startBlock = starts[index]
     const endBlock = ends[index]
     return {
-      spaceChefId: dustPoolConfig.spaceChefId,
+      spaceChefId: pdustPoolConfig.spaceChefId,
       startBlock: new BigNumber(startBlock).toJSON(),
       endBlock: new BigNumber(endBlock).toJSON(),
     }
@@ -36,10 +36,10 @@ export const fetchPoolsBlockLimits = async () => {
 }
 
 export const fetchPoolsTotalStatking = async () => {
-  const nonBnbPools = poolsConfig.filter((p) => p.stakingToken.symbol !== 'BNB')
-  const bnbPool = poolsConfig.filter((p) => p.stakingToken.symbol === 'BNB')
+  const nonMaticPools = poolsConfig.filter((p) => p.stakingToken.symbol !== 'MATIC')
+  const maticPool = poolsConfig.filter((p) => p.stakingToken.symbol === 'MATIC')
 
-  const callsNonBnbPools = nonBnbPools.map((poolConfig) => {
+  const callsNonMaticPools = nonMaticPools.map((poolConfig) => {
     return {
       address: getAddress(poolConfig.stakingToken.address),
       name: 'balanceOf',
@@ -47,25 +47,25 @@ export const fetchPoolsTotalStatking = async () => {
     }
   })
 
-  const callsBnbPools = bnbPool.map((poolConfig) => {
+  const callsMaticPools = maticPool.map((poolConfig) => {
     return {
-      address: getWbnbAddress(),
+      address: getWmaticAddress(),
       name: 'balanceOf',
       params: [getAddress(poolConfig.contractAddress)],
     }
   })
 
-  const nonBnbPoolsTotalStaked = await multicall(dustABI, callsNonBnbPools)
-  const bnbPoolsTotalStaked = await multicall(wbnbABI, callsBnbPools)
+  const nonMaticPoolsTotalStaked = await multicall(pdustABI, callsNonMaticPools)
+  const maticPoolsTotalStaked = await multicall(wmaticABI, callsMaticPools)
 
   return [
-    ...nonBnbPools.map((p, index) => ({
+    ...nonMaticPools.map((p, index) => ({
       spaceChefId: p.spaceChefId,
-      totalStaked: new BigNumber(nonBnbPoolsTotalStaked[index]).toJSON(),
+      totalStaked: new BigNumber(nonMaticPoolsTotalStaked[index]).toJSON(),
     })),
-    ...bnbPool.map((p, index) => ({
+    ...maticPool.map((p, index) => ({
       spaceChefId: p.spaceChefId,
-      totalStaked: new BigNumber(bnbPoolsTotalStaked[index]).toJSON(),
+      totalStaked: new BigNumber(maticPoolsTotalStaked[index]).toJSON(),
     })),
   ]
 }

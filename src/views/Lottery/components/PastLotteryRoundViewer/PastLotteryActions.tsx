@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Button, LinkExternal, useModal } from 'moonwalkerswap-uikit'
+import { Button, LinkExternal, useModal } from 'polygon-moonwalkerswap-uikit'
 import useI18n from 'hooks/useI18n'
 import { useWeb3React } from '@web3-react/core'
 import useTickets from 'hooks/useTickets'
@@ -51,7 +51,7 @@ const TicketCard: React.FC<{ contractLink?: string; lotteryNumber?: number }> = 
         </Button>
       </div>
       <div>
-        <ExternalLinkWrap href={contractLink}>{TranslateString(356, 'View on BscScan')}</ExternalLinkWrap>
+        <ExternalLinkWrap href={contractLink}>{TranslateString(356, 'View on PolygonScan')}</ExternalLinkWrap>
       </div>
     </Wrapper>
   )

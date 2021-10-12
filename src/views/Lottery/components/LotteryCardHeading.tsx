@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Flex, Heading, Text } from 'moonwalkerswap-uikit'
+import { Flex, Heading, Text } from 'polygon-moonwalkerswap-uikit'
 
 interface HeadingProps {
   valueToDisplay?: string

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Heading, Card, CardBody, Flex, ArrowForwardIcon } from 'moonwalkerswap-uikit'
+import { Heading, Card, CardBody, Flex, ArrowForwardIcon } from 'polygon-moonwalkerswap-uikit'
 import { NavLink } from 'react-router-dom'
 import useLotteryTotalPrizesUsd from 'hooks/useLotteryTotalPrizesUsd'
 

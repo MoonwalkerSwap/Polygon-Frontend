@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react'
 import styled from 'styled-components'
-import { Button, Heading, Won, useModal } from 'moonwalkerswap-uikit'
+import { Button, Heading, Won, useModal } from 'polygon-moonwalkerswap-uikit'
 import useI18n from 'hooks/useI18n'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { useMultiClaimLottery } from 'hooks/useBuyLottery'
@@ -77,7 +77,7 @@ const PrizesWonContent: React.FC = () => {
               {winnings}
             </Heading>
             <Heading as="h4" size="lg">
-              CAKE
+              pDUST
             </Heading>
           </WinningsWrapper>
         </>

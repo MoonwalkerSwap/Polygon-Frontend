@@ -2,13 +2,13 @@
   {
     "inputs": [
       {
-        "internalType": "contract DustToken",
+        "internalType": "contract PdustToken",
         "name": "_dust",
         "type": "address"
       },
       {
-        "internalType": "contract Rocket",
-        "name": "_rocket",
+        "internalType": "contract pSpaceBar",
+        "name": "_pspacebar",
         "type": "address"
       },
       {
@@ -18,7 +18,7 @@
       },
       {
         "internalType": "uint256",
-        "name": "_dustPerBlock",
+        "name": "_pdustPerBlock",
         "type": "uint256"
       },
       {
@@ -145,7 +145,7 @@
         "type": "uint256"
       },
       {
-        "internalType": "contract IBEP20",
+        "internalType": "contract IERC20",
         "name": "_lpToken",
         "type": "address"
       },
@@ -165,7 +165,7 @@
     "name": "dust",
     "outputs": [
       {
-        "internalType": "contract DustToken",
+        "internalType": "contract PdustToken",
         "name": "",
         "type": "address"
       }
@@ -175,7 +175,7 @@
   },
   {
     "inputs": [],
-    "name": "dustPerBlock",
+    "name": "pdustPerBlock",
     "outputs": [
       {
         "internalType": "uint256",

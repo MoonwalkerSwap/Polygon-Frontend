@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react'
-import { Input } from 'moonwalkerswap-uikit'
+import { Input } from 'polygon-moonwalkerswap-uikit'
 import styled from 'styled-components'
 
 const StyledInput = styled(Input)`

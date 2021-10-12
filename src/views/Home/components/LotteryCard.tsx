@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from 'react'
 import styled from 'styled-components'
-import { Heading, Card, CardBody, Button, useModal } from 'moonwalkerswap-uikit'
-import { getDustAddress } from 'utils/addressHelpers'
+import { Heading, Card, CardBody, Button, useModal } from 'polygon-moonwalkerswap-uikit'
+import { getPdustAddress } from 'utils/addressHelpers'
 import { getBalanceNumber } from 'utils/formatBalance'
 import useI18n from 'hooks/useI18n'
 import useGetLotteryHasDrawn from 'hooks/useGetLotteryHasDrawn'
@@ -12,7 +12,7 @@ import BuyModal from 'views/Lottery/components/TicketCard/BuyTicketModal'
 import { useLotteryAllowance } from 'hooks/useAllowance'
 import { useApproval } from 'hooks/useApproval'
 import PurchaseWarningModal from 'views/Lottery/components/TicketCard/PurchaseWarningModal'
-import DustWinnings from './DustWinnings'
+import PdustWinnings from './PdustWinnings'
 import LotteryJackpot from './LotteryJackpot'
 
 const StyledLotteryCard = styled(Card)`
@@ -51,7 +51,7 @@ const FarmedStakingCard = () => {
   const [onPresentApprove] = useModal(<PurchaseWarningModal />)
   const { claimAmount } = useTotalClaim()
   const { onMultiClaim } = useMultiClaimLottery()
-  const cakeBalance = useTokenBalance(getDustAddress())
+  const pdustBalance = useTokenBalance(getPdustAddress())
   const { handleApprove, requestedApproval } = useApproval(onPresentApprove)
 
   const handleClaim = useCallback(async () => {
@@ -71,7 +71,7 @@ const FarmedStakingCard = () => {
     if (!allowance.toNumber()) {
       return (
         <Button width="100%" disabled={requestedApproval} onClick={handleApprove}>
-          {TranslateString(494, 'Approve DUST')}
+          {TranslateString(494, 'Approve pDUST')}
         </Button>
       )
     }
@@ -82,7 +82,7 @@ const FarmedStakingCard = () => {
     )
   }
 
-  const [onPresentBuy] = useModal(<BuyModal max={cakeBalance} tokenName="DUST" />)
+  const [onPresentBuy] = useModal(<BuyModal max={pdustBalance} tokenName="pDUST" />)
 
   return (
     <StyledLotteryCard>
@@ -92,8 +92,8 @@ const FarmedStakingCard = () => {
         </Heading>
         <CardImage src="/images/ticket.svg" alt="cake logo" width={64} height={64} />
         <Block>
-          <Label>{TranslateString(552, 'DUST to Collect')}:</Label>
-          <DustWinnings />
+          <Label>{TranslateString(552, 'pDUST to Collect')}:</Label>
+          <PdustWinnings />
         </Block>
         <Block>
           <Label>{TranslateString(554, 'Total jackpot this round')}:</Label>

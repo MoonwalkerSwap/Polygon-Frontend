@@ -1,5 +1,5 @@
 import BigNumber from 'bignumber.js'
-import { BLOCKS_PER_YEAR, DUST_PER_BLOCK } from 'config'
+import { BLOCKS_PER_YEAR, PDUST_PER_BLOCK } from 'config'
 
 /**
  * Get the APY value in %
@@ -24,13 +24,13 @@ export const getPoolApy = (
 /**
  * Get farm APY value in %
  * @param poolWeight allocationPoint / totalAllocationPoint
- * @param dustPriceUsd Dust price in USD
+ * @param pdustPriceUsd PDust price in USD
  * @param poolLiquidityUsd Total pool liquidity in USD
  * @returns
  */
-export const getFarmApy = (poolWeight: BigNumber, dustPriceUsd: BigNumber, poolLiquidityUsd: BigNumber): number => {
-  const yearlyDustRewardAllocation = DUST_PER_BLOCK.times(BLOCKS_PER_YEAR).times(poolWeight)
-  const apy = yearlyDustRewardAllocation.times(dustPriceUsd).div(poolLiquidityUsd).times(100)
+export const getFarmApy = (poolWeight: BigNumber, pdustPriceUsd: BigNumber, poolLiquidityUsd: BigNumber): number => {
+  const yearlyDustRewardAllocation = PDUST_PER_BLOCK.times(BLOCKS_PER_YEAR).times(poolWeight)
+  const apy = yearlyDustRewardAllocation.times(pdustPriceUsd).div(poolLiquidityUsd).times(100)
   return apy.isNaN() || !apy.isFinite() ? null : apy.toNumber()
 }
 

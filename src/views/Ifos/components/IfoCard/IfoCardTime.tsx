@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Flex, Link } from 'moonwalkerswap-uikit'
+import { Flex, Link } from 'polygon-moonwalkerswap-uikit'
 import { IfoStatus } from 'config/constants/types'
 import getTimePeriods from 'utils/getTimePeriods'
 import useI18n from 'hooks/useI18n'
@@ -44,7 +44,7 @@ const IfoCardTime: React.FC<IfoCardTimeProps> = ({ status, secondsUntilStart, se
   return (
     <Details>
       <Countdown>{`${timeUntil.days}d, ${timeUntil.hours}h, ${timeUntil.minutes}m until ${suffix}`}</Countdown>
-      <Link href={`https://bscscan.com/block/countdown/${block}`} target="blank" rel="noopener noreferrer" ml="8px">
+      <Link href={`https://polygonscan.com/block/countdown/${block}`} target="blank" rel="noopener noreferrer" ml="8px">
         (blocks)
       </Link>
     </Details>

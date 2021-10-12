@@ -1,4 +1,4 @@
-import { Toast } from 'moonwalkerswap-uikit'
+import { Toast } from 'polygon-moonwalkerswap-uikit'
 import BigNumber from 'bignumber.js'
 import { CampaignType, FarmConfig, Nft, PoolConfig } from 'config/constants/types'
 

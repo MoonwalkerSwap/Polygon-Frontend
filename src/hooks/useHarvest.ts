@@ -2,7 +2,7 @@ import { useCallback } from 'react'
 import { useWeb3React } from '@web3-react/core'
 import { useDispatch } from 'react-redux'
 import { fetchFarmUserDataAsync, updateUserBalance, updateUserPendingReward } from 'state/actions'
-import { spaceChefHarvest, spaceChefHarvestBnb, harvest } from 'utils/callHelpers'
+import { spaceChefHarvest, spaceChefHarvestMatic, harvest } from 'utils/callHelpers'
 import { useAstroChef, useSpaceChef } from './useContract'
 
 export const useHarvest = (farmPid: number) => {
@@ -34,7 +34,7 @@ export const useAllHarvest = (farmPids: number[]) => {
   return { onReward: handleHarvest }
 }
 
-export const useSpaceChefHarvest = (spaceChefId, isUsingBnb = false) => {
+export const useSpaceChefHarvest = (spaceChefId, isUsingMatic = false) => {
   const dispatch = useDispatch()
   const { account } = useWeb3React()
   const spaceChefContract = useSpaceChef(spaceChefId)
@@ -43,14 +43,14 @@ export const useSpaceChefHarvest = (spaceChefId, isUsingBnb = false) => {
   const handleHarvest = useCallback(async () => {
     if (spaceChefId === 0) {
       await harvest(astroChefContract, 0, account)
-    } else if (isUsingBnb) {
-      await spaceChefHarvestBnb(spaceChefContract, account)
+    } else if (isUsingMatic) {
+      await spaceChefHarvestMatic(spaceChefContract, account)
     } else {
       await spaceChefHarvest(spaceChefContract, account)
     }
     dispatch(updateUserPendingReward(spaceChefId, account))
     dispatch(updateUserBalance(spaceChefId, account))
-  }, [account, dispatch,  astroChefContract, isUsingBnb, spaceChefContract, spaceChefId])
+  }, [account, dispatch,  astroChefContract, isUsingMatic, spaceChefContract, spaceChefId])
 
   return { onReward: handleHarvest }
 }

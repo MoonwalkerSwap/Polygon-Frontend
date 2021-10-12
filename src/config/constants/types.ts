@@ -13,7 +13,7 @@ export interface Ifo {
   launchTime: string
   saleAmount: string
   raiseAmount: string
-  dustToBurn: string
+  pdustToBurn: string
   projectSiteUrl: string
   currency: string
   currencyAddress: string
@@ -26,12 +26,11 @@ export interface Ifo {
 export enum PoolCategory {
   'COMMUNITY' = 'Community',
   'CORE' = 'Core',
-  'BINANCE' = 'Binance', // Pools using native BNB behave differently than pools using a token
+  'POLYGON' = 'Polygon', // Pools using native Matic may behave differently than pools using a token
 }
 
 export interface Address {
-  97?: string
-  56: string
+  137?: string
 }
 
 export interface Token {

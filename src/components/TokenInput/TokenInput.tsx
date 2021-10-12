@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Button, Flex, Text, Input, InputProps } from 'moonwalkerswap-uikit'
+import { Box, Button, Flex, Text, Input, InputProps } from 'polygon-moonwalkerswap-uikit'
 import useI18n from 'hooks/useI18n'
 
 interface TokenInputProps extends InputProps {

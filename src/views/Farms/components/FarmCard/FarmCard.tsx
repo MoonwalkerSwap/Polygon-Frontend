@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import BigNumber from 'bignumber.js'
 import styled, { keyframes } from 'styled-components'
-import { Flex, Text, Skeleton } from 'moonwalkerswap-uikit'
+import { Flex, Text, Skeleton } from 'polygon-moonwalkerswap-uikit'
 import { communityFarms } from 'config/constants'
 import { Farm } from 'state/types'
 import { provider as ProviderType } from 'web3-core'
@@ -91,19 +91,19 @@ const StyledText = styled(Text)`
 interface FarmCardProps {
   farm: FarmWithStakedValue
   removed: boolean
-  dustPrice?: BigNumber
+  pdustPrice?: BigNumber
   provider?: ProviderType
   account?: string
 }
 
-const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, dustPrice, account }) => {
+const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, pdustPrice, account }) => {
   const TranslateString = useI18n()
 
   const [showExpandableSection, setShowExpandableSection] = useState(false)
 
   const isCommunityFarm = communityFarms.includes(farm.token.symbol)
-  // We assume the token name is coin pair + lp e.g. DUST-BNB LP, LINK-BNB LP,
-  // NAR-DUST LP. The images should be dust-bnb.svg, link-bnb.svg, nar-dust.svg
+  // We assume the token name is coin pair + lp e.g. pDUST-MATIC LP, LINK-MATIC LP,
+  // NAR-pDUST LP. The images should be dust-matic.svg, link-matic.svg, nar-dust.svg
   // eslint-disable-next-line
   const farmImage = farm.lpSymbol.split(' ')[0].toLocaleLowerCase()
 
@@ -112,7 +112,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, dustPrice, account }
     : '-'
 
   const lpLabel = farm.lpSymbol && farm.lpSymbol.toUpperCase().replace('MoonWalker', '')
-  const earnLabel = farm.dual ? farm.dual.earnLabel : 'DUST  '
+  const earnLabel = farm.dual ? farm.dual.earnLabel : 'pDUST  '
 
   const farmAPY = farm.apy && farm.apy.toLocaleString('en-US', { maximumFractionDigits: 2 })
 
@@ -124,7 +124,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, dustPrice, account }
 
   return (
     <FCard>
-      {farm.token.symbol === 'DUST' && <StyledCardAccent />}
+      {farm.token.symbol === 'pDUST' && <StyledCardAccent />}
       <CardHeading
         lpLabel={lpLabel}
         multiplier={farm.multiplier}
@@ -138,7 +138,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, dustPrice, account }
           <Text bold style={{ display: 'flex', alignItems: 'center' }}>
             {farm.apy ? (
               <>
-                <ApyButton lpLabel={lpLabel} addLiquidityUrl={addLiquidityUrl} dustPrice={dustPrice} apy={farm.apy} />
+                <ApyButton lpLabel={lpLabel} addLiquidityUrl={addLiquidityUrl} pdustPrice={pdustPrice} apy={farm.apy} />
                 {farmAPY}%
               </>
             ) : (
@@ -160,7 +160,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, dustPrice, account }
       <ExpandingWrapper expanded={showExpandableSection}>
         <DetailsSection
           removed={removed}
-          bscScanAddress={`https://bscscan.com/address/${farm.lpAddresses[process.env.REACT_APP_CHAIN_ID]}`}
+          polygonScanAddress={`https://polygonscan.com/address/${farm.lpAddresses[process.env.REACT_APP_CHAIN_ID]}`}
           totalValueFormated={totalValueFormated}
           lpLabel={lpLabel}
           addLiquidityUrl={addLiquidityUrl}

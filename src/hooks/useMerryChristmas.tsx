@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useParticleBurst } from 'moonwalkerswap-uikit'
+import { useParticleBurst } from 'polygon-moonwalkerswap-uikit'
 import { useLocation } from 'react-router-dom'
 
 const disableWhenNotChristmas = () => {

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text } from 'moonwalkerswap-uikit'
+import { Text } from 'polygon-moonwalkerswap-uikit'
 
 interface PastRoundCardErrorProps {
   error: {

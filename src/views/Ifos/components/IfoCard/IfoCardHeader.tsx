@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Heading, Text, Flex } from 'moonwalkerswap-uikit'
+import { Heading, Text, Flex } from 'polygon-moonwalkerswap-uikit'
 
 interface IfoCardHeaderProps {
   ifoId: string

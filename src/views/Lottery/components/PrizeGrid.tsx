@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import useI18n from 'hooks/useI18n'
-import { Heading, Text } from 'moonwalkerswap-uikit'
+import { Heading, Text } from 'polygon-moonwalkerswap-uikit'
 
 export interface PrizeGridProps {
   lotteryPrizeAmount?: number

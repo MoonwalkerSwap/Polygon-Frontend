@@ -1,13 +1,13 @@
 import React, { useState, useCallback } from 'react'
 import styled from 'styled-components'
-import { Button, useModal, IconButton, AddIcon, MinusIcon } from 'moonwalkerswap-uikit'
+import { Button, useModal, IconButton, AddIcon, MinusIcon } from 'polygon-moonwalkerswap-uikit'
 import UnlockButton from 'components/UnlockButton'
 import { useWeb3React } from '@web3-react/core'
 import { useFarmUser } from 'state/hooks'
 import { FarmWithStakedValue } from 'views/Farms/components/FarmCard/FarmCard'
 import useI18n from 'hooks/useI18n'
 import { useApprove } from 'hooks/useApprove'
-import { getBep20Contract } from 'utils/contractHelpers'
+import { getERC20Contract } from 'utils/contractHelpers'
 import { BASE_ADD_LIQUIDITY_URL } from 'config'
 import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
 import { getBalanceNumber } from 'utils/formatBalance'
@@ -48,7 +48,7 @@ const Staked: React.FunctionComponent<FarmWithStakedValue> = ({ pid, lpSymbol, l
   )
   const [onPresentWithdraw] = useModal(<WithdrawModal max={stakedBalance} onConfirm={onUnstake} tokenName={lpSymbol} />)
 
-  const lpContract = getBep20Contract(lpAddress, web3)
+  const lpContract = getERC20Contract(lpAddress, web3)
 
   const { onApprove } = useApprove(lpContract)
 

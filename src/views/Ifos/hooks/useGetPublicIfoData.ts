@@ -1,5 +1,5 @@
 import BigNumber from 'bignumber.js'
-import { BSC_BLOCK_TIME } from 'config'
+import { POLYGON_BLOCK_TIME } from 'config'
 import { Ifo, IfoStatus } from 'config/constants/types'
 import { useBlock } from 'state/hooks'
 import { useIfoContract } from 'hooks/useContract'
@@ -82,8 +82,8 @@ const useGetPublicIfoData = (ifo: Ifo) => {
           : ((currentBlock - releaseBlockNumber) / (startBlockNum - releaseBlockNumber)) * 100
 
       setState({
-        secondsUntilEnd: blocksRemaining * BSC_BLOCK_TIME,
-        secondsUntilStart: (startBlockNum - currentBlock) * BSC_BLOCK_TIME,
+        secondsUntilEnd: blocksRemaining * POLYGON_BLOCK_TIME,
+        secondsUntilStart: (startBlockNum - currentBlock) * POLYGON_BLOCK_TIME,
         raisingAmount: new BigNumber(raisingAmount),
         totalAmount: new BigNumber(totalAmount),
         status,
