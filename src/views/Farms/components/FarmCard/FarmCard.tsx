@@ -14,7 +14,6 @@ import CardHeading from './CardHeading'
 import CardActionsContainer from './CardActionsContainer'
 import ApyButton from './ApyButton'
 
-
 export interface FarmWithStakedValue extends Farm {
   apy?: number
   liquidity?: BigNumber
@@ -86,7 +85,6 @@ const ExpandingWrapper = styled.div<{ expanded: boolean }>`
 const StyledText = styled(Text)`
   color: ${({ theme }) => theme.colors.textDisabled};
 `
-
 
 interface FarmCardProps {
   farm: FarmWithStakedValue

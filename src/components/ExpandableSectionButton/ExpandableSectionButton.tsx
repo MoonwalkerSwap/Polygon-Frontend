@@ -13,7 +13,6 @@ const Wrapper = styled.div`
   justify-content: center;
   cursor: pointer;
 
-
   svg {
     fill: ${({ theme }) => theme.colors.textSubtle};
   }

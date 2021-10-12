@@ -72,7 +72,7 @@ const FlexFull = styled.div`
 `
 const Label = styled.div`
   font-size: 14px;
-  color: ${(props) => props.theme.colors.textDisabled}
+  color: ${(props) => props.theme.colors.textDisabled};
 `
 const TokenLink = styled.a`
   font-size: 14px;
@@ -122,7 +122,7 @@ const CardFooter: React.FC<Props> = ({
             <FlexFull>
               <Label>
                 <span role="img" aria-label="space">
-                 🚀{' '}
+                  🚀{' '}
                 </span>
                 {TranslateString(408, 'Total')}
               </Label>

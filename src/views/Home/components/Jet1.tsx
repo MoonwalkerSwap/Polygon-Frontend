@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, {keyframes} from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 const float = keyframes`
 	0% {
@@ -11,19 +11,16 @@ const float = keyframes`
 	100% {
 		transform: translatey(0px);
 	}
-`;
+`
 
 const StyledBackground = styled.div`
-
   display: none;
 
   ${({ theme }) => theme.mediaQueries.lg} {
-    display:block;
+    display: block;
     background-image: url('/images/moon/jetbg.svg');
-
   }
 `
-
 
 const Img = styled.img`
   animation: ${float} 4s ease-in-out infinite;
@@ -31,11 +28,9 @@ const Img = styled.img`
 `
 
 const Jet1 = () => {
-
-
   return (
     <StyledBackground>
-      <Img src="/images/moon/jet1.png" alt="jet"/>
+      <Img src="/images/moon/jet1.png" alt="jet" />
     </StyledBackground>
   )
 }

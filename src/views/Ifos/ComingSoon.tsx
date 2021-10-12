@@ -82,12 +82,7 @@ const ComingSoon = () => {
                 'Launch your project with MoonWalkerSwap, Polygon Chain’s most-used AMM project and liquidity provider, to bring your token directly to the most active and rapidly growing community on Polygon.',
               )}
             </Text>
-            <Button
-              as="a"
-              href="https://form.jotform.com/212606130120031"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Button as="a" href="https://form.jotform.com/212606130120031" target="_blank" rel="noopener noreferrer">
               {TranslateString(516, 'Apply to launch')}
             </Button>
           </Block>

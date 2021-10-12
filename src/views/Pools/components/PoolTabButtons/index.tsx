@@ -9,7 +9,7 @@ const PoolTabButtons = ({ stackedOnly, setStackedOnly }) => {
   const { url, isExact } = useRouteMatch()
   const TranslateString = useI18n()
   const { isDark, toggleTheme } = useTheme()
-  const textColor = isDark ? "" : "#2A2A2A";
+  const textColor = isDark ? '' : '#2A2A2A'
 
   return (
     <Wrapper>
@@ -18,10 +18,14 @@ const PoolTabButtons = ({ stackedOnly, setStackedOnly }) => {
         <Text> {TranslateString(999, 'Staked only')}</Text>
       </ToggleWrapper>
       <ButtonMenu activeIndex={isExact ? 0 : 1} scale="sm" variant="primary">
-        <ButtonMenuItem as={Link} to={`${url}`} style={{ borderRadius: '30px', width: '100px', color:textColor }}>
+        <ButtonMenuItem as={Link} to={`${url}`} style={{ borderRadius: '30px', width: '100px', color: textColor }}>
           {TranslateString(1198, 'Live')}
         </ButtonMenuItem>
-        <ButtonMenuItem as={Link} to={`${url}/history`} style={{ borderRadius: '30px', width: '100px', color:textColor }}>
+        <ButtonMenuItem
+          as={Link}
+          to={`${url}/history`}
+          style={{ borderRadius: '30px', width: '100px', color: textColor }}
+        >
           {TranslateString(388, 'Finished')}
         </ButtonMenuItem>
       </ButtonMenu>

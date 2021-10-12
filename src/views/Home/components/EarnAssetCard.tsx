@@ -19,7 +19,7 @@ const CardMidContent = styled(Heading).attrs({ size: 'xl' })`
   line-height: 44px;
 `
 const Circle = styled.div`
-  background: #FEC803;
+  background: #fec803;
   margin-top: -50px;
   width: 59px;
   height: 59px;
@@ -50,7 +50,7 @@ const EarnAssetCard = () => {
           </Heading>
           <NavLink exact activeClassName="active" to="/syrup" id="pool-cta">
             <Circle>
-              <ArrowForwardIcon  color="#000000" />
+              <ArrowForwardIcon color="#000000" />
             </Circle>
           </NavLink>
         </Flex>

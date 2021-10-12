@@ -20,11 +20,11 @@ const StyledFarmStakingCard = styled(Card)`
 `
 const CardMidContent = styled(Heading).attrs({ size: 'lg' })`
   line-height: 44px;
-  Width: 75%;
-  color: ${({theme}) => theme.colors.extra}
+  width: 75%;
+  color: ${({ theme }) => theme.colors.extra};
 `
 const Circle = styled.div`
-  background: #3D2C8D;
+  background: #3d2c8d;
   margin-top: -50px;
   width: 59px;
   height: 59px;
@@ -64,7 +64,7 @@ const EarnAPYCard = () => {
         <Heading color="text" size="lg">
           Earn up to
         </Heading>
-        <CardMidContent >
+        <CardMidContent>
           {highestApy ? (
             `${highestApy}% ${TranslateString(736, 'APR')}`
           ) : (
@@ -77,7 +77,7 @@ const EarnAPYCard = () => {
           </Heading>
           <NavLink exact activeClassName="active" to="/farms" id="farm-apy-cta">
             <Circle>
-              <ArrowForwardIcon  color="#000000" />
+              <ArrowForwardIcon color="#000000" />
             </Circle>
           </NavLink>
         </Flex>

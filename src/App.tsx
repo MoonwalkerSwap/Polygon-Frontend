@@ -66,17 +66,17 @@ const App: React.FC = () => {
             </Route>
             <Route path="/collectibles">
               <Collectibles />
-            <Route path="/staking">
-              <Redirect to="/pools" />
-            </Route>
-            <Route path="/syrup">
-              <Redirect to="/pools" />
-            </Route>
-            <Route path="/nft">
-              <Redirect to="/collectibles" />
-            </Route>
-            {/* 404 */}
-            <Route component={NotFound} />
+              <Route path="/staking">
+                <Redirect to="/pools" />
+              </Route>
+              <Route path="/syrup">
+                <Redirect to="/pools" />
+              </Route>
+              <Route path="/nft">
+                <Redirect to="/collectibles" />
+              </Route>
+              {/* 404 */}
+              <Route component={NotFound} />
             </Route>
           </Switch>
         </SuspenseWithChunkError>

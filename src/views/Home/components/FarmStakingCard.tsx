@@ -15,7 +15,6 @@ const StyledFarmStakingCard = styled(Card)`
   min-height: 376px;
 `
 const StyledUnlockButton = styled(UnlockButton)`
-
   background: ${({ theme }) => theme.colors.button};
   color: #ffffff;
   width: 100%;
@@ -81,7 +80,6 @@ const FarmedStakingCard = () => {
               disabled={balancesWithValue.length <= 0 || pendingTx}
               onClick={harvestAllFarms}
               width="100%"
-
             >
               {pendingTx
                 ? TranslateString(548, 'Collecting pDUST')

@@ -17,7 +17,6 @@ const Action = styled.div`
   padding-top: 16px;
 `
 const StyledUnlockButton = styled(UnlockButton)`
-
   background: ${({ theme }) => theme.colors.primary};
   color: #000000;
   width: 100%;
@@ -72,7 +71,7 @@ const CardActions: React.FC<FarmCardActionsProps> = ({ farm, account, addLiquidi
         addLiquidityUrl={addLiquidityUrl}
       />
     ) : (
-      <StyledButton mt="8px" width="100%"  disabled={requestedApproval} onClick={handleApprove}>
+      <StyledButton mt="8px" width="100%" disabled={requestedApproval} onClick={handleApprove}>
         {TranslateString(758, 'Approve Contract')}
       </StyledButton>
     )

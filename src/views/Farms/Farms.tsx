@@ -318,7 +318,6 @@ const Farms: React.FC = () => {
           </Heading>
         </Container>
         <Container2>
-
           <MoonFarming />
         </Container2>
       </Header>

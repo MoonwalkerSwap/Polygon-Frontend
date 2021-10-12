@@ -98,14 +98,14 @@ const Home: React.FC = () => {
         <Hero>
           <JetMobile />
           <Flex>
-            <Jet1/>
+            <Jet1 />
             <Container>
               <Heading as="h1" size="xl" mb="24px" color="text">
                 {TranslateString(576, 'Polygon MoonWalkerSwap')}
               </Heading>
               <Text>{TranslateString(578, 'The Newest AMM and yield farm on Polygon Chain.')}</Text>
             </Container>
-            <Jet2/>
+            <Jet2 />
           </Flex>
         </Hero>
         <div>

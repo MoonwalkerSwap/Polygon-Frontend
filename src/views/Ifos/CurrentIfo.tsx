@@ -69,11 +69,7 @@ const Ifo = () => {
             <li>{TranslateString(608, 'Done!')}</li>
           </List>
           <Text as="div" pt="16px">
-            <Button
-              as="a"
-              variant="secondary"
-              href="https://docs.moonwalker.network/core-products"
-            >
+            <Button as="a" variant="secondary" href="https://docs.moonwalker.network/core-products">
               {TranslateString(610, 'Read more')}
             </Button>
           </Text>
@@ -88,11 +84,7 @@ const Ifo = () => {
                 'Launch your project with Polygon MoonWalkerSwap,Polygon Chain’s most-used AMM project and liquidity provider, to bring your token directly to the most active and rapidly growing community on Polygon.',
               )}
             </Text>
-            <Button
-              as="a"
-              href="https://form.jotform.com/212606130120031"
-              external
-            >
+            <Button as="a" href="https://form.jotform.com/212606130120031" external>
               {TranslateString(516, 'Apply to launch')}
             </Button>
           </div>

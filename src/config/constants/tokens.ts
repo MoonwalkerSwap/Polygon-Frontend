@@ -103,7 +103,7 @@ const tokens = {
     symbol: 'GHTS',
     address: {
       137: '0x385eeac5cb85a38a9a07a70c73e0a3271cfb54a7',
-  },
+    },
     decimals: 18,
     projectLink: 'https://litecoin.org/',
   },

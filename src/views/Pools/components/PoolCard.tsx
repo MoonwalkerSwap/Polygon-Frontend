@@ -29,7 +29,6 @@ import HarvestButton from './HarvestButton'
 import CardFooter from './CardFooter'
 
 const StyledUnlockButton = styled(UnlockButton)`
-
   background: ${({ theme }) => theme.colors.primary};
   color: #000000;
   width: 100%;
@@ -131,7 +130,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
       {isFinished && spaceChefId !== 0 && <PoolFinishedSash />}
       <div style={{ padding: '24px' }}>
         <CardTitle isFinished={isFinished && spaceChefId !== 0}>
-         {earningToken.symbol} {TranslateString(348, 'Pool')}
+          {earningToken.symbol} {TranslateString(348, 'Pool')}
         </CardTitle>
         <div style={{ marginBottom: '8px', display: 'flex', alignItems: 'center' }}>
           <div style={{ flex: 1 }}>
@@ -150,7 +149,10 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
             />
           )}
         </div>
-        <Label isFinished={isFinished && spaceChefId !== 0} text={TranslateString(330, `${earningToken.symbol} earned`)} />
+        <Label
+          isFinished={isFinished && spaceChefId !== 0}
+          text={TranslateString(330, `${earningToken.symbol} earned`)}
+        />
         <StyledCardActions>
           {!account && <StyledUnlockButton />}
           {account &&
@@ -163,16 +165,13 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
               </div>
             ) : (
               <>
-                <Button
-                  disabled={stakedBalance.eq(new BigNumber(0)) || pendingTx}
-                >
+                <Button disabled={stakedBalance.eq(new BigNumber(0)) || pendingTx}>
                   {`Unstake ${stakingToken.symbol}`}
                 </Button>
-                <StyledActionSpacer />
-                (
-                  <IconButton disabled={isFinished && spaceChefId !== 0} onClick={onPresentDeposit}>
-                    <AddIcon color="white" />
-                  </IconButton>
+                <StyledActionSpacer />(
+                <IconButton disabled={isFinished && spaceChefId !== 0} onClick={onPresentDeposit}>
+                  <AddIcon color="white" />
+                </IconButton>
                 )
               </>
             ))}
@@ -187,8 +186,8 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
         </StyledDetails>
         <StyledDetails>
           <div style={{ flex: 1 }}>
-            <span role="img" >
-              <img src='/images/moon/barrel.png' alt='barrel' />{' '}
+            <span role="img">
+              <img src="/images/moon/barrel.png" alt="barrel" />{' '}
             </span>
             {TranslateString(384, 'Your Stake')}:
           </div>
@@ -248,7 +247,7 @@ const StyledActionSpacer = styled.div`
 
 const StyledDetails = styled.div`
   display: flex;
-  color:  ${({ theme }) => theme.colors.textDisabled};
+  color: ${({ theme }) => theme.colors.textDisabled};
   justify-content: space-between;
   align-items: center;
   font-size: 14px;

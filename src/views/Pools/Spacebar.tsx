@@ -15,7 +15,6 @@ import PoolCard from './components/PoolCard'
 import PoolTabButtons from './components/PoolTabButtons'
 import Divider from './components/Divider'
 
-
 const Farm: React.FC = () => {
   const { path } = useRouteMatch()
   const TranslateString = useI18n()
@@ -23,7 +22,6 @@ const Farm: React.FC = () => {
   const pools = usePools(account)
   const { blockNumber } = useBlock()
   const [stackedOnly, setStackedOnly] = useState(false)
-
 
   const [finishedPools, openPools] = useMemo(
     () => partition(pools, (pool) => pool.isFinished || blockNumber > pool.endBlock),
@@ -43,9 +41,15 @@ const Farm: React.FC = () => {
               {TranslateString(738, 'Space Pool')}
             </Heading>
             <ul>
-              <li><Text>{TranslateString(580, 'Stake pDUST to earn new tokens.')}</Text></li>
-              <li><Text>{TranslateString(486, 'You can unstake at any time.')}</Text></li>
-              <li><Text>{TranslateString(406, 'Rewards are calculated per block.')}</Text></li>
+              <li>
+                <Text>{TranslateString(580, 'Stake pDUST to earn new tokens.')}</Text>
+              </li>
+              <li>
+                <Text>{TranslateString(486, 'You can unstake at any time.')}</Text>
+              </li>
+              <li>
+                <Text>{TranslateString(406, 'Rewards are calculated per block.')}</Text>
+              </li>
             </ul>
           </div>
           <img src="/images/syrup.svg" alt="SPACEBAR POOL icon" width={410} height={191} />
@@ -56,7 +60,9 @@ const Farm: React.FC = () => {
           <Route exact path={`${path}`}>
             <>
               {stackedOnly
-                ? orderBy(stackedOnlyPools, ['sortOrder']).map((pool) => <PoolCard key={pool.spaceChefId} pool={pool} />)
+                ? orderBy(stackedOnlyPools, ['sortOrder']).map((pool) => (
+                    <PoolCard key={pool.spaceChefId} pool={pool} />
+                  ))
                 : orderBy(openPools, ['sortOrder']).map((pool) => <PoolCard key={pool.spaceChefId} pool={pool} />)}
               <Coming />
             </>

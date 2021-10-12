@@ -14,7 +14,7 @@ const nonMaticPools = poolsConfig.filter((p) => p.stakingToken.symbol !== 'MATIC
 const maticPools = poolsConfig.filter((p) => p.stakingToken.symbol === 'MATIC')
 const nonAstroPools = poolsConfig.filter((p) => p.spaceChefId !== 0)
 const web3 = getWeb3NoAccount()
-const astroChefContract = new web3.eth.Contract((astroChefABI as unknown) as AbiItem, getAstroChefAddress())
+const astroChefContract = new web3.eth.Contract(astroChefABI as unknown as AbiItem, getAstroChefAddress())
 
 export const fetchPoolsAllowance = async (account) => {
   const calls = nonMaticPools.map((p) => ({

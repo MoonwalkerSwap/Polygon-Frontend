@@ -8,11 +8,11 @@ const Wrapper = styled(Page)`
   justify-content: center;
   align-items: center;
 `
- 
+
 const PageLoader: React.FC = () => {
   return (
     <Wrapper>
-      <Spinner img='/images/moon/logo.gif' size={150}/>
+      <Spinner img="/images/moon/logo.gif" size={150} />
     </Wrapper>
   )
 }

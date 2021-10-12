@@ -50,7 +50,7 @@ export const useSpaceChefHarvest = (spaceChefId, isUsingMatic = false) => {
     }
     dispatch(updateUserPendingReward(spaceChefId, account))
     dispatch(updateUserBalance(spaceChefId, account))
-  }, [account, dispatch,  astroChefContract, isUsingMatic, spaceChefContract, spaceChefId])
+  }, [account, dispatch, astroChefContract, isUsingMatic, spaceChefContract, spaceChefId])
 
   return { onReward: handleHarvest }
 }

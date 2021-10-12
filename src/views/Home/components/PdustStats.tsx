@@ -31,20 +31,26 @@ const PdustStats = () => {
     <StyledPdustStats>
       <CardBody>
         <Heading size="xl" mb="24px">
-          {TranslateString(534, "pDUST Stats")}
+          {TranslateString(534, 'pDUST Stats')}
         </Heading>
         <CardImage src="/images/moon/wings.svg" alt="wings logo" width={64} height={64} />
         <Block>
           {pdustSupply && <CardValue fontSize="36px" value={pdustSupply} />}
-          <Text fontSize="14px" color="#808080">{TranslateString(536, "Total pDUST Supply")}</Text>
+          <Text fontSize="14px" color="#808080">
+            {TranslateString(536, 'Total pDUST Supply')}
+          </Text>
         </Block>
         <Block>
           <CardValue fontSize="36px" decimals={0} value={burnedBalance} />
-          <Text fontSize="14px" color="#808080">{TranslateString(538, "Total pDUST Burned")}</Text>
+          <Text fontSize="14px" color="#808080">
+            {TranslateString(538, 'Total pDUST Burned')}
+          </Text>
         </Block>
         <Block>
           <CardValue fontSize="36px" decimals={0} value={25} />
-          <Text fontSize="14px" color="#808080">{TranslateString(540, "New pDUST/block")}</Text>
+          <Text fontSize="14px" color="#808080">
+            {TranslateString(540, 'New pDUST/block')}
+          </Text>
         </Block>
       </CardBody>
     </StyledPdustStats>

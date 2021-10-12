@@ -41,7 +41,11 @@ const ApyCalculatorModal: React.FC<ApyCalculatorModalProps> = ({
 
   const pdustEarnedPerThousand1D = calculatePdustEarnedPerThousandDollars({ numberOfDays: 1, farmApy: apy, pdustPrice })
   const pdustEarnedPerThousand7D = calculatePdustEarnedPerThousandDollars({ numberOfDays: 7, farmApy: apy, pdustPrice })
-  const pdustEarnedPerThousand30D = calculatePdustEarnedPerThousandDollars({ numberOfDays: 30, farmApy: apy, pdustPrice })
+  const pdustEarnedPerThousand30D = calculatePdustEarnedPerThousandDollars({
+    numberOfDays: 30,
+    farmApy: apy,
+    pdustPrice,
+  })
   const pdustEarnedPerThousand365D = calculatePdustEarnedPerThousandDollars({
     numberOfDays: 365,
     farmApy: apy,

@@ -43,7 +43,6 @@ const ifos: Ifo[] = [
     releaseBlockNumber: 5294924,
     campaignId: '511070000',
   },
-  
 ]
 
 export default ifos
