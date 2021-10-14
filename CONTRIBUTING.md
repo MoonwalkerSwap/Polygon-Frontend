@@ -1,7 +1,7 @@
-# Contributing to the Polygon MoonWalkerSwap ecosystem 🥞
+# Contributing to the Polygon MoonWalkerSwap ecosystem 🌙
 
 Thanks for taking the time to contribute !
-You can start by reading our [Contribution guidelines](https://docs.moonwalker.network/contributing) first.
+You can start by reading our [Contribution guidelines](https://polygon-docs.moonwalker.network/contributing) first.
 
 ## Setup
 
